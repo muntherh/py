@@ -1,0 +1,358 @@
+===== SLIDE 1 (layout: Title Slide) =====
+[Google Shape;128;p1] Topic 4 - Iteration
+===== SLIDE 2 (layout: OBJECT) =====
+[Google Shape;141;p3] What is iteration?
+[Google Shape;142;p3] Repeated execution of a set of statements is called iteration. 
+
+Python provides several language features to make iteration easier.
+
+There are two types of iteration:
+Definite iteration, in which the number of repetitions is specified explicitly in advance
+			Example: for loop
+Indefinite iteration, in which the code block executes until some condition is met
+			Example: while loop
+
+===== SLIDE 3 (layout: Title Slide) =====
+[Google Shape;147;p4] While Loop
+===== SLIDE 4 (layout: OBJECT) =====
+[Google Shape;153;p5] The while loop
+[Google Shape;154;p5] The while loop statement allows you to repeatedly execute a block of statements as long as a condition is true. 
+
+[PICTURE Google Shape;155;p5]
+===== SLIDE 5 (layout: OBJECT) =====
+[PICTURE Google Shape;160;p6]
+[Google Shape;161;p6] Syntax of while Loop
+[Google Shape;162;p6] Syntax of while Loop
+		while <test_condition>: 
+			<Body of while>
+
+
+
+
+
+[Google Shape;164;p6] indentation
+[Google Shape;165;p6] Test the condition again 
+[OTHER LINE (9) Google Shape;166;p6]
+===== SLIDE 6 (layout: OBJECT) =====
+[Google Shape;171;p7] While loop 
+[Google Shape;172;p7] In while loop, 
+test expression is checked first. 
+The body of the loop is entered only, if the <test_condition> evaluates to True. 
+After one iteration, the <test_condition> is checked again. 
+This process continues until the <test_condition> evaluate to False.
+Body starts with indentation and the first unindented line marks the end.
+
+===== SLIDE 7 (layout: OBJECT) =====
+[Google Shape;178;p8] 			while <test_condition>: 
+			<Body of while>
+
+the <test_condition>  is a Boolean expression.
+
+
+Use the logical operators. 		
+[OTHER LINE (9) Google Shape;180;p8]
+[OTHER LINE (9) Google Shape;181;p8]
+[Google Shape;182;p8] True
+[Google Shape;183;p8] False
+[PICTURE Google Shape;184;p8]
+[G:Google Shape;186;p8] Comparison operators 
+[G:Google Shape;187;p8] ==
+[G:Google Shape;188;p8] !=
+[G:Google Shape;189;p8] <
+[G:Google Shape;190;p8] <=
+[G:Google Shape;191;p8] >
+[G:Google Shape;192;p8] >=
+[Google Shape;199;p8] Use the comparison operators 
+===== SLIDE 8 (layout: OBJECT) =====
+[Google Shape;206;p9] 		while <test_condition>: 
+			<Body of while>
+Python interprets any non-zero number for the <test_condition> as True. None and 0 are interpreted as False. 
+
+[PICTURE Google Shape;207;p9]
+[PICTURE Google Shape;208;p9]
+[PICTURE Google Shape;209;p9]
+===== SLIDE 9 (layout: OBJECT) =====
+[Google Shape;229;p11] The while loop (Examples)
+[Google Shape;230;p11] while loop to print numbers from 1 to 5.
+
+[PICTURE Google Shape;231;p11]
+[PICTURE Google Shape;232;p11]
+[PICTURE Google Shape;233;p11]
+[PICTURE Google Shape;234;p11]
+[PICTURE Google Shape;235;p11]
+[PICTURE Google Shape;236;p11]
+===== SLIDE 10 (layout: OBJECT) =====
+[Google Shape;241;p12] Pattern to follow in While Loop
+[PICTURE Google Shape;242;p12]
+[PICTURE Google Shape;244;p12]
+[OTHER LINE (9) Google Shape;245;p12]
+[OTHER LINE (9) Google Shape;246;p12]
+[OTHER LINE (9) Google Shape;247;p12]
+[Google Shape;248;p12] A is Iterator 
+===== SLIDE 11 (layout: OBJECT) =====
+[Google Shape;253;p13] The while loop (Examples)
+[Google Shape;254;p13] Here is a simple program that counts down from 5 until 1. 
+[PICTURE Google Shape;255;p13]
+[PICTURE Google Shape;256;p13]
+[PICTURE Google Shape;257;p13]
+[PICTURE Google Shape;258;p13]
+[PICTURE Google Shape;259;p13]
+[PICTURE Google Shape;260;p13]
+===== SLIDE 12 (layout: OBJECT) =====
+[PICTURE Google Shape;265;p14]
+[Google Shape;266;p14] The while loop (Examples)
+[Google Shape;267;p14] Program to find sum of numbers from 1 to 10:(1+2+3+4+5+6+7+8+9+10)
+[PICTURE Google Shape;268;p14]
+[Google Shape;269;p14] 1
+===== SLIDE 13 (layout: OBJECT) =====
+[Google Shape;291;p17] Exercises
+
+Using while loop, write  a Program to Calculate and print the Average of 5 Numbers given by the user. 
+   average = sum of five numbers/5
+
+
+Write a loop to find and print the factorial of any number
+
+[Google Shape;299;p18] 5! = 5 × 4 × 3 × 2 × 1 = 120 
+===== SLIDE 14 (layout: OBJECT) =====
+[Google Shape;304;p19] Exercise
+[Google Shape;305;p19] Write  a Program to Calculate the Average of N Numbers, where N is a number given by the user,  based on N ask the user to enter the numbers and calculate the average value. Were the average = sum of numbers/N
+[PICTURE Google Shape;306;p19]
+===== SLIDE 15 (layout: TITLE_ONLY) =====
+[Google Shape;312;p20] Exercise
+[PICTURE Picture 1]
+===== SLIDE 16 (layout: Title Slide) =====
+[Google Shape;318;p21] While loop and conditionals
+===== SLIDE 17 (layout: OBJECT) =====
+[Google Shape;324;p22] Exercise
+[Google Shape;325;p22] Write python program that accept the final mark for programming course for 4 students. If the student score is higher than 50, print( you passed ). Otherwise print (you Failed ).
+[PICTURE Google Shape;326;p22]
+===== SLIDE 18 (layout: OBJECT) =====
+[Google Shape;331;p23] Exercise
+[Google Shape;332;p23] Write python program that display the price of products after discount. The program accepts 3 products price purchased by the user. 
+If the product price is higher than 50 OMR, the discount percentage is 40%. Otherwise, the discount percentage is 20%. Calculate the discount price for each product.
+Discounted price = product price –(product price * discount percentage )
+
+[PICTURE Google Shape;333;p23]
+===== SLIDE 19 (layout: Title Slide) =====
+[Google Shape;349;p25] Infinite loop 
+===== SLIDE 20 (layout: OBJECT) =====
+[Google Shape;355;p26] Infinite loops
+[Google Shape;356;p26] An infinite loop repeats the statements without stop.
+This loop is obviously an infinite loop because the logical expression on the while statement is simply the logical constant True:
+
+
+
+
+
+One of the simplest ways to stop an infinite loop in Python is by using a keyboard interrupt. 
+This method involves pressing the “Ctrl + C” keys on your keyboard while the program is running.
+[PICTURE Google Shape;357;p26]
+===== SLIDE 21 (layout: OBJECT) =====
+[Google Shape;362;p27] Infinite loops (Example)
+[OTHER PLACEHOLDER (14) Google Shape;363;p27]
+===== SLIDE 22 (layout: Title Slide) =====
+[Google Shape;369;p28] For Loop
+===== SLIDE 23 (layout: OBJECT) =====
+[Google Shape;374;p29] The for loop
+[Google Shape;375;p29] When we have a list of things to loop through, we can construct a definite loop using a for statement. 
+Syntax of for Loop
+			for val in sequence: 
+				<Body of for>
+
+val is the variable that takes the value of the item inside the sequence on each iteration.
+Loop continues until we reach the last item in the sequence.
+The body of for loop is separated from the rest of the code using indentation.
+[OTHER LINE (9) Google Shape;376;p29]
+[Google Shape;377;p29] Range 
+List 
+===== SLIDE 24 (layout: OBJECT) =====
+[Google Shape;382;p30] Flowchart of for Loop
+[PICTURE Google Shape;383;p30]
+===== SLIDE 25 (layout: OBJECT) =====
+[Google Shape;388;p31] For loop using range() Function
+[Google Shape;389;p31] To loop through a set of code a specified number of times, we can use the range() function.
+The range() function returns a sequence of numbers.
+
+Syntax for range() function:-
+	range(end)
+	range(start, end)
+    range(start, end, step size)
+
+Start= 0 by default
+Step size = 1 by default, where it increments by 1 
+
+
+===== SLIDE 26 (layout: BLANK) =====
+[Google Shape;394;p32] the last value will be always (end -1)
+[Google Shape;395;p32] range(6)
+[Google Shape;396;p32] For loop using range() Function
+[PICTURE Google Shape;397;p32]
+0 | 1 | 2 | 3 | 4 | 5
+[Google Shape;399;p32] range(1,6)
+1 | 2 | 3 | 4 | 5
+[Google Shape;401;p32] range(1,10,2)
+1 | 3 | 5 | 7 | 9
+[Google Shape;403;p32] start
+[Google Shape;404;p32] end-1
+[Google Shape;406;p32] Step size
+===== SLIDE 27 (layout: OBJECT) =====
+[Google Shape;412;p33] range(5) will generate numbers from 0 to 4 
+
+
+range(2, 6) will generate numbers : 2, 3, 4, 5
+
+
+range(10, 1, -2) will generate numbers : 1, 3, 5, 7, 9
+
+
+range(5,0,-1) will generate numbers : 5, 4, 3, 2, 1 
+
+0 | 1 | 2 | 3 | 4
+2 | 3 | 4 | 5
+10 | 8 | 6 | 4 | 2
+5 | 4 | 3 | 2 | 1
+===== SLIDE 28 (layout: OBJECT) =====
+[Google Shape;421;p34] Exercise
+[Google Shape;422;p34] What is the output of the following code. 
+[PICTURE Google Shape;423;p34]
+[Google Shape;424;p34] Output: 
+10
+
+[Google Shape;425;p34] 7
+[Google Shape;426;p34] 4
+
+[Google Shape;427;p34] 1
+[Google Shape;428;p34] end
+===== SLIDE 29 (layout: OBJECT) =====
+[Google Shape;433;p35] for loop (examples)
+[Google Shape;434;p35] Print numbers from 0 to 4
+[PICTURE Google Shape;435;p35]
+[Google Shape;436;p35] Print numbers from 3 to 6
+[PICTURE Google Shape;437;p35]
+===== SLIDE 30 (layout: OBJECT) =====
+[Google Shape;442;p36] for loop (examples)
+[Google Shape;443;p36] Print numbers from 5 to 1
+
+
+
+[Google Shape;444;p36] Print numbers from 10 to 50 and increment by 10
+[PICTURE Google Shape;445;p36]
+[PICTURE Google Shape;446;p36]
+===== SLIDE 31 (layout: OBJECT) =====
+[Google Shape;451;p37] Exercise
+[Google Shape;452;p37] Print the values from 1 to 10 using range function.
+[PICTURE Google Shape;453;p37]
+===== SLIDE 32 (layout: OBJECT) =====
+[Google Shape;458;p38] Exercise
+[Google Shape;459;p38] What is the output of the following code. 
+[PICTURE Google Shape;460;p38]
+[Google Shape;461;p38] Output: 
+2
+
+[Google Shape;462;p38] 4
+[Google Shape;463;p38] Sum is 20
+[Google Shape;464;p38] 6
+[Google Shape;465;p38] 8
+===== SLIDE 33 (layout: Title Slide) =====
+[Google Shape;470;p39]  Loop with conditions 
+===== SLIDE 34 (layout: OBJECT) =====
+[Google Shape;476;p40] Loop with conditions
+[Google Shape;477;p40] Loops can have conditional checks inside its body, ie. the body of loop can have a if or if else or if elif conditions
+Example: Program to print numbers ending with 5 between 1 to 50
+[PICTURE Google Shape;478;p40]
+===== SLIDE 35 (layout: OBJECT) =====
+[Google Shape;483;p41] Exercise 
+[Google Shape;484;p41] Write a program that finds the numbers that are divisible by 137(Remainder of division is zero). in the range 1 to 1000.
+
+How to find if a number is divisible by 137?
+Number%137==0
+What is the range ?
+Range(1,1000)
+
+===== SLIDE 36 (layout: Title Slide) =====
+[Google Shape;550;p49] Break statement 
+===== SLIDE 37 (layout: OBJECT) =====
+[Google Shape;556;p50] break statement
+[Google Shape;557;p50] break statement is used to jump out of the loop or terminate the loop.
+i.e. stop the execution of a looping statement, even if the loop condition has not become False (while loop) or the sequence of items has not been completely iterated over(for loop).
+
+
+===== SLIDE 38 (layout: OBJECT) =====
+[Google Shape;562;p51] Flowchart of break
+[PICTURE Google Shape;563;p51]
+[PICTURE Google Shape;564;p51]
+===== SLIDE 39 (layout: OBJECT) =====
+[Google Shape;569;p52] break example
+[Google Shape;570;p52] For example, suppose you want to take input from the user until they type done. You could write:
+The loop condition is True, which is always true, so the loop runs repeatedly until it hits the break statement.
+
+[PICTURE Google Shape;571;p52]
+===== SLIDE 40 (layout: OBJECT) =====
+[Google Shape;576;p53] break example
+[Google Shape;577;p53] Print numbers from 5 to 1 but terminate if you reach 2
+
+[PICTURE Google Shape;578;p53]
+===== SLIDE 41 (layout: Title Slide) =====
+[Google Shape;597;p56] continue statement 
+===== SLIDE 42 (layout: OBJECT) =====
+[Google Shape;603;p57] The continue Statement
+[Google Shape;604;p57]  The continue statement is used to tell Python to skip the rest of the statements in the current loop block and to continue to the next iteration of the loop.
+
+ That is, the current iteration of the loop will be disrupted, but the program will return to the top of the loop for next iteration.
+
+
+
+===== SLIDE 43 (layout: OBJECT) =====
+[Google Shape;609;p58] Flowchart of continue 
+[PICTURE Google Shape;610;p58]
+[PICTURE Google Shape;611;p58]
+===== SLIDE 44 (layout: OBJECT) =====
+[Google Shape;616;p59] continue statement - examples
+[Google Shape;617;p59] Print numbers from 0 to 4 except 2
+[PICTURE Google Shape;618;p59]
+===== SLIDE 45 (layout: TITLE_ONLY) =====
+[PICTURE Google Shape;624;p60]
+[Google Shape;636;p62] break  and continue
+===== SLIDE 46 (layout: OBJECT) =====
+[Google Shape;636;p62] Exercise
+[Google Shape;637;p62] What is the output of the following code.
+[PICTURE Google Shape;639;p62]
+[PICTURE Picture 2]
+===== SLIDE 47 (layout: OBJECT) =====
+[Google Shape;644;p63] Exercise
+[Google Shape;645;p63] What is the output of the following code.
+[PICTURE Google Shape;646;p63]
+[PICTURE Google Shape;647;p63]
+===== SLIDE 48 (layout: Title Slide) =====
+[Google Shape;652;p64] Nested loop
+===== SLIDE 49 (layout: OBJECT) =====
+[Google Shape;658;p65] Nested Loop
+[Google Shape;659;p65] A nested loop is a loop that occurs within another loop, structurally similar to nested if statements. 
+A loop inside another loop is called nested loop.
+Nested loop can be created using while loop or for loop 
+
+Syntax:
+for [1st  iterating variable] in [outer loop]: # Outer loop 
+	[do something] # Optional 
+	for [2nd  iterating variable] in [nested loop]: # Nested loop 	[do something] 
+===== SLIDE 50 (layout: OBJECT) =====
+[Google Shape;664;p66] Nested loop example
+[Google Shape;665;p66] Print the pattern using nested loop
+[PICTURE Google Shape;667;p66]
+[PICTURE Picture 1]
+===== SLIDE 51 (layout: BLANK) =====
+[PICTURE Picture 1]
+[Google Shape;664;p66] Nested loop example
+===== SLIDE 52 (layout: OBJECT) =====
+[OTHER PLACEHOLDER (14) Google Shape;686;p68]
+[Google Shape;664;p66] Nested loop example
+===== SLIDE 53 (layout: OBJECT) =====
+[Google Shape;691;p69] Solution
+[OTHER PLACEHOLDER (14) Google Shape;692;p69]
+===== SLIDE 54 (layout: OBJECT) =====
+[PICTURE Google Shape;699;p70]
+[Google Shape;664;p66] Nested loop example
+===== SLIDE 55 (layout: OBJECT) =====
+[Google Shape;704;p71] Solution 
+[PICTURE Picture 4]

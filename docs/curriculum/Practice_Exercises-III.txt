@@ -1,0 +1,62 @@
+1. Write a program to read two numbers and check which no is bigger or equal.
+
+2. Write a program to read a number and check if the no is positive or negative of zero.
+
+3. Write a program to read three numbers and find the largest of three numbers.
+
+4. Write a program to read your name, id no, Quiz, mid and final marks. Calculate total marks
+   and print the grade based on the following conditions.
+        Marks                                       Grade
+        90 and above                                A
+        80-89                                       B
+        70-79                                       C
+        60-69                                       D
+        Below 60                                    F
+       Sample Output:
+
+
+
+
+5. Write a program to read two numbers. Performs the operations and prints the values based
+   on the user’s choice.
+        User’s Choice                            Operation
+        1                                        Addition
+        2                                        subtraction
+        3                                        Multiplication
+        4                                        Modulus
+        5                                        Division
+        Any other numbers                        Print - ERROR
+
+ 6. Write a program for the Carrefour hypermarket discount processing system. Read the
+    name of the customer, the price of two items, and calculate the total price. If the total
+    price is greater than 500, give a discount of 50 riyals and print the discounted amount. If
+    the price is between 100– 500, give a discount of 20 riyals, print the discounted amount,
+      If the price is between 50– 99, give a discount of 5 riyals, print the discounted amount,
+      less than 50 print no discount.
+      Output1:
+    Output2:
+
+
+
+
+    Output3:
+
+
+
+
+    Output4:
+
+
+
+
+7. Write a program to read a number/choice from the user.
+       • If the choice is 1
+               o Read an input string and check if its equal to UTAS. Print if there are
+                  equal or not equal.
+       • If the choice is 2
+               o Read any input and find the data type.
+       • If the choice is 3
+               o Read two numbers and check if the numbers are not equal. Print if there
+                  are equal or not equal.
+       • Any other choice print error
+

@@ -1,0 +1,29 @@
+Worked Examples:
+
+1. Write a Python program to read student id, name, course name and ID. Print based on the
+   following output.
+
+
+
+
+2. Write a Python program to read your name, age, and college name. Print as per the given
+   output.
+
+
+
+
+3. Write a Python program to read your name, year of birth, and college name.
+   calculate the age and Print the information as per the given output:
+
+
+
+
+4. Write a program that will read students marks for three courses: Programming 1, Web
+   Technology and Calculus. Compute the average of the three marks and display your
+   output similar to the one below:
+
+
+
+
+ 5.
+

@@ -1,0 +1,35 @@
+import { loadPyodide } from "pyodide";
+import { readFileSync } from "node:fs";
+const py = await loadPyodide();
+py.FS.writeFile("/home/pyodide/pml_harness.py", readFileSync("src/runtime/harness.py", "utf8"));
+const h = py.pyimport("pml_harness");
+let out = [];
+const answers = ["Sami", "abc"];
+h.configure((s, t) => out.push([s, t]), async (p) => { out.push(["prompt", p]); return answers.shift() ?? null; });
+async function run(code, opts = {}) {
+  out = [];
+  const r = await h.run(code, opts.mode ?? "script", opts.inputs ? py.toPy(opts.inputs) : null, 200000);
+  const res = r.toJs({ dict_converter: Object.fromEntries });
+  console.log("----", JSON.stringify(code.slice(0, 40)));
+  console.log(res.status, res.error_type, res.line);
+  if (res.error) console.log(res.error);
+  console.log("OUT:", JSON.stringify(out.filter(e=>e[0]!=="prompt").map(e => e[1]).join("")));
+  return res;
+}
+await run('print("Hello World")');
+await run('name = input("Name: ")\nprint("Hello " + name + "!")\nage = int(input("Age: "))');
+await run('x = 10\nif x > 5\n    print(x)');
+await run('if True:\nprint(1)');
+await run('a = 5\nprint(a / 0)');
+await run('print(undefined_var)');
+await run('total = 0\ni = 1\nwhile i <= 3:\n    n = int(input())\n    total += n\n    i += 1\nprint("Avg", total / 3)', { inputs: ["1", "2", "6"] });
+await run('n = int(input())', { inputs: [] });
+await run('x = 3', { mode: "notebook" });
+await run('x * 2', { mode: "notebook" });
+await run('type("Hello")', { mode: "notebook" });
+await run('print("a", end="")\nprint("b")\nbreak');
+await run('def f():\n    return input()\nf()');
+await run('print("1" + 2)');
+await run("print('What\\'s your name?')");
+await run('while True:\n    print("x"*1000)');
+console.log(JSON.stringify(h.transcript().toJs().slice(0,2)));

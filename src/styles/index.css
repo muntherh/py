@@ -1,0 +1,264 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+
+/* ------------------------------------------------------------------ design tokens */
+:root,
+:root[data-theme="dark"] {
+  --bg: #0a0f1f;
+  --bg-grad: radial-gradient(1200px 600px at 10% -10%, rgba(124, 58, 237, 0.16), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(59, 130, 246, 0.12), transparent 55%);
+  --surface: #10172e;
+  --surface-2: #161f3d;
+  --surface-3: #1d2850;
+  --border: #253159;
+  --border-strong: #34437a;
+  --text: #e7eaf6;
+  --muted: #a3abc9;
+  --subtle: #7d86a8;
+  --primary: #8b5cf6;
+  --primary-strong: #7c3aed;
+  --primary-btn: #6d28d9;
+  --primary-btn-hover: #5b21b6;
+  --primary-soft: rgba(139, 92, 246, 0.16);
+  --primary-text: #c4b5fd;
+  --accent: #3b82f6;
+  --accent-soft: rgba(59, 130, 246, 0.16);
+  --accent-text: #93c5fd;
+  --success: #22c55e;
+  --success-soft: rgba(34, 197, 94, 0.14);
+  --success-text: #86efac;
+  --warning: #f59e0b;
+  --warning-soft: rgba(245, 158, 11, 0.14);
+  --warning-text: #fcd34d;
+  --danger: #ef4444;
+  --danger-btn: #dc2626;
+  --danger-soft: rgba(239, 68, 68, 0.14);
+  --danger-text: #fca5a5;
+  --code-bg: #0b1126;
+  --console-bg: #080d1d;
+  --focus: #a78bfa;
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 10px 30px -12px rgba(0, 0, 0, 0.6);
+  --tok-kw: #c4b5fd;
+  --tok-str: #86efac;
+  --tok-num: #fdba74;
+  --tok-fn: #93c5fd;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f5f6fb;
+  --bg-grad: radial-gradient(1200px 600px at 10% -10%, rgba(124, 58, 237, 0.08), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(59, 130, 246, 0.07), transparent 55%);
+  --surface: #ffffff;
+  --surface-2: #f1f3fa;
+  --surface-3: #e7eaf5;
+  --border: #dde1ee;
+  --border-strong: #c3c9dd;
+  --text: #121735;
+  --muted: #4a5276;
+  --subtle: #565e85;
+  --primary: #6d28d9;
+  --primary-strong: #5b21b6;
+  --primary-btn: #6d28d9;
+  --primary-btn-hover: #4c1d95;
+  --primary-soft: rgba(109, 40, 217, 0.1);
+  --primary-text: #5b21b6;
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.1);
+  --accent-text: #1d4ed8;
+  --success: #15803d;
+  --success-soft: rgba(21, 128, 61, 0.1);
+  --success-text: #166534;
+  --warning: #b45309;
+  --warning-soft: rgba(180, 83, 9, 0.1);
+  --warning-text: #92400e;
+  --danger: #dc2626;
+  --danger-btn: #b91c1c;
+  --danger-soft: rgba(220, 38, 38, 0.08);
+  --danger-text: #b91c1c;
+  --code-bg: #f7f8fc;
+  --console-bg: #0f1426;
+  --focus: #7c3aed;
+  --shadow: 0 1px 2px rgba(16, 24, 64, 0.06), 0 8px 24px -12px rgba(16, 24, 64, 0.18);
+  --tok-kw: #6d28d9;
+  --tok-str: #15803d;
+  --tok-num: #c2410c;
+  --tok-fn: #1d4ed8;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-primary: var(--primary);
+  --color-primary-strong: var(--primary-strong);
+  --color-primary-btn: var(--primary-btn);
+  --color-primary-btn-hover: var(--primary-btn-hover);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-text: var(--primary-text);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-text: var(--accent-text);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-success-text: var(--success-text);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-warning-text: var(--warning-text);
+  --color-danger: var(--danger);
+  --color-danger-btn: var(--danger-btn);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-text: var(--danger-text);
+  --color-code: var(--code-bg);
+  --color-console: var(--console-bg);
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --shadow-card: var(--shadow);
+}
+
+/* ------------------------------------------------------------------ base */
+@layer base {
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image: var(--bg-grad);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::selection {
+  background: var(--primary-soft);
+}
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+code,
+kbd,
+pre,
+.cm-content {
+  font-family: var(--font-mono);
+  /* No ligatures: beginners must see <=, >=, != and == exactly as they type them. */
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+}
+}
+
+/* ------------------------------------------------------------------ components */
+@utility card {
+  @apply rounded-2xl border border-line bg-surface shadow-card;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-3.5 py-2 text-sm font-medium transition-colors duration-150 select-none disabled:cursor-not-allowed disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn bg-primary-btn text-white hover:bg-primary-btn-hover;
+}
+@utility btn-secondary {
+  @apply btn border border-line bg-surface-2 text-ink hover:bg-surface-3;
+}
+@utility btn-ghost {
+  @apply btn text-muted hover:bg-surface-2 hover:text-ink;
+}
+@utility btn-danger {
+  @apply btn bg-danger-btn text-white hover:opacity-90;
+}
+@utility btn-sm {
+  @apply px-2.5 py-1.5 text-xs;
+}
+@utility chip {
+  @apply inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium;
+}
+@utility input {
+  @apply w-full rounded-xl border border-line bg-surface-2 px-3 py-2 text-sm text-ink placeholder:text-subtle focus:border-primary focus:outline-none;
+}
+@utility label {
+  @apply text-xs font-semibold tracking-wide text-subtle uppercase;
+}
+@utility inline-code {
+  @apply rounded-md border border-line bg-code px-1.5 py-0.5 font-mono text-[0.85em] text-primary-text;
+}
+
+/* ------------------------------------------------------------------ animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.28s ease-out both;
+}
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 1.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* display-only syntax tokens */
+.tok-kw {
+  color: var(--tok-kw);
+  font-weight: 500;
+}
+.tok-str {
+  color: var(--tok-str);
+}
+.tok-num {
+  color: var(--tok-num);
+}
+.tok-fn {
+  color: var(--tok-fn);
+}
+
+/* CodeMirror sizing */
+.cm-editor {
+  font-size: var(--editor-font-size, 14px);
+  background: var(--code-bg) !important;
+}
+.cm-editor.cm-focused {
+  outline: none !important;
+}
+.cm-scroller {
+  font-family: var(--font-mono) !important;
+  line-height: 1.6 !important;
+}

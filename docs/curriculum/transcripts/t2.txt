@@ -1,0 +1,924 @@
+===== SLIDE 1 (layout: Title Slide) =====
+[Google Shape;62;p1] Topic#2
+[Google Shape;63;p1] Variables, expressions, and statements
+===== SLIDE 2 (layout: OBJECT) =====
+[Google Shape;75;p3] Values and Types 
+[Google Shape;76;p3] A value or constant 
+One of the basic things a program works with, like a letter or a number. 
+
+Example for values are 
+ 1
+ 2.562
+ True
+ 3+4j
+ “Hello, UTAS!”
+
+===== SLIDE 3 (layout: OBJECT) =====
+[Google Shape;82;p4] Ref: https://www.geeksforgeeks.org/python-data-types/
+[Google Shape;83;p4] Values and Types 
+[Google Shape;84;p4] Data Type: represent the kind of value
+[PICTURE Picture 1]
+===== SLIDE 4 (layout: BLANK) =====
+[PICTURE Google Shape;102;p6]
+[Google Shape;103;p6] integers
+[OTHER LINE (9) Google Shape;104;p6]
+[Google Shape;105;p6] a number, positive or negative, without decimals, and of unlimited length.
+[Google Shape;106;p6] 2
+-56
+0
+76789999865433331
+[G-PICTURE Google Shape;108;p6]
+[G:Google Shape;112;p6] Numbers
+===== SLIDE 5 (layout: BLANK) =====
+[Google Shape;117;p7] 3.5
+-0.004
+[Google Shape;118;p7] Represent real numbers and are written with a decimal point. 
+[OTHER LINE (9) Google Shape;119;p7]
+[Google Shape;120;p7] may also be in scientific notation, with E or e indicating the power of 10.
+[Google Shape;121;p7] 5.6e-6 = 5.6 * 10-6 
+6 E10 = 6 * 1010
+[G-PICTURE Google Shape;123;p7]
+[G:Google Shape;127;p7] Numbers
+===== SLIDE 6 (layout: BLANK) =====
+[PICTURE Google Shape;132;p8]
+[OTHER LINE (9) Google Shape;133;p8]
+[Google Shape;134;p8] Represent complex numbers, of the form a + bJ
+a is the real part.
+b is the imaginary part.
+[Google Shape;135;p8] 4+5j
+7j
+-7J
+[G-PICTURE Google Shape;137;p8]
+[G:Google Shape;141;p8] Numbers
+===== SLIDE 7 (layout: OBJECT) =====
+[Google Shape;156;p10] Boolean:
+Booleans represent one of two values: 
+ True 
+ False 
+Note: ‘T’ in True and ‘F’ in False should be uppercase letters.
+[Google Shape;157;p10] Values and Types 
+===== SLIDE 8 (layout: OBJECT) =====
+[Google Shape;172;p12]  Values and types 
+[Google Shape;173;p12] 
+Strings:
+A string is a sequence of characters 
+Strings are basically just words.(collection of characters)
+“Hello”     	‘Hello’
+
+Types of Strings:
+Using Single Quotes ('). You can specify strings using single quotes. All white space i.e. spaces and tabs are preserved as-is. 
+Using Double Quotes("). Strings in double quotes work exactly the same way as strings in single quotes.  
+		  
+	
+===== SLIDE 9 (layout: OBJECT) =====
+[Google Shape;184;p13]  Values and types 
+[Google Shape;185;p13] 
+Using Triple Quotes (''' or """). You can specify multi-line strings using triple quotes. Also, you can use single quotes and double quotes freely within triple quotes. Examples are
+
+	 	
+’’’ welcome 
+     to 
+     UTAS’’’
+ | “““welcome 
+     to 
+     UTAS”””
+
+===== SLIDE 10 (layout: OBJECT) =====
+[Google Shape;191;p14] Escape Sequences
+[Google Shape;192;p14] “What’s your name?” 
+inside double quotes, you can freely use single quotes and vice versa
+‘What’s your name?’ 
+Python will be confused, where the string starts and ends 
+
+This can be solved using Escape Sequences. 
+You specify the single quote as \' - notice the backslash. Now, you can specify the string as 
+                 ‘What\’s your name?’
+===== SLIDE 11 (layout: OBJECT) =====
+[Google Shape;197;p15] Escape Sequences
+\n – new line character
+>>>print("Welcome to \n UTAS") 
+     Welcome to 
+      UTAS
+
+\t – tab space character
+>>>print("Welcome to \t UTAS ")
+     Welcome to 	UTAS
+===== SLIDE 12 (layout: OBJECT) =====
+[Google Shape;204;p16] Escape Sequences
+Also, remember that a single backslash at the end of the line indicates that the string is continued in the next line but it does not mean that there is a newline.
+
+[PICTURE Google Shape;205;p16]
+===== SLIDE 13 (layout: OBJECT) =====
+[Google Shape;210;p17] 	>>> type('Hello, World!') 
+		 str
+	>>> type(17) 
+		 int
+	>>> type(8.5) 
+		 float
+	>>> type(True) 
+		 bool
+>>> type(‘17’) 
+	
+>>> type(“3.2”) 
+	 
+	>>> type(true) 
+		 
+[Google Shape;211;p17] Values and types 
+[Google Shape;212;p17] type() function:
+If you are not sure what type a value has, the interpreter can tell you using the type() function.
+===== SLIDE 14 (layout: OBJECT) =====
+[Google Shape;217;p18] Exercise 
+[Google Shape;218;p18] What is the output of the python code here 
+[Google Shape;219;p18] “A string is \n a sequence of characters ”
+[Google Shape;220;p18] ’’’A string is a sequence 
+of characters’’’
+[Google Shape;221;p18] ’A string is a sequence /
+of characters’
+===== SLIDE 15 (layout: OBJECT) =====
+[Google Shape;226;p19] Exercise 
+[Google Shape;227;p19] Write a python statement to get the following output (using double quote) 
+[Google Shape;228;p19] A string is a “sequence” of characters
+===== SLIDE 16 (layout: Title Slide) =====
+[Google Shape;233;p20] Variables 
+===== SLIDE 17 (layout: TWO_OBJECTS) =====
+[Google Shape;239;p21] Variables and Keywords 
+[Google Shape;240;p21] What is a variable?
+A variable or an identifier is a name that refers to a value. 
+Variables are just parts of your computer's memory where you store some information.
+
+We think of variables as containers that hold information and allow us access them later. We will think of this as a box that has a label on it. The label is very useful because it means that we can refer to the box later.
+[PICTURE Google Shape;241;p21]
+[PICTURE Google Shape;242;p21]
+===== SLIDE 18 (layout: OBJECT) =====
+[PICTURE Google Shape;247;p22]
+[Google Shape;248;p22] Variables and Keywords 
+[Google Shape;249;p22] The value of the variables can vary, i.e., you can store anything using a variable. 
+Variable declaration is not required in python.
+===== SLIDE 19 (layout: OBJECT) =====
+[PICTURE Google Shape;254;p23]
+[Google Shape;255;p23] Variables and Keywords 
+[Google Shape;256;p23] An assignment statement creates new variables and gives them values:
+       >>> myName = “Bilal” 
+
+       >>> myAge = 17 
+
+       >>> isHappy = True
+
+===== SLIDE 20 (layout: OBJECT) =====
+[Google Shape;278;p26] Variables and Keywords 
+[PICTURE Google Shape;280;p26]
+[Google Shape;281;p26] The first character of the identifier must be an alphabet or an underscore ( _ ). 
+[PICTURE Google Shape;282;p26]
+[Google Shape;283;p26] The rest of the identifier name can consist of letters, underscores ( _) or digits (0-9). 
+[Google Shape;284;p26] No special symbols like (&,*,# etc).
+
+Space are not allowed for identifier names.
+
+Python keywords are not allowed.
+===== SLIDE 21 (layout: OBJECT) =====
+[Google Shape;289;p27] Variables and Keywords 
+[Google Shape;290;p27] Python reserves 35 keywords: 
+
+and 		del 		from 		None 		True
+as 		elif 		global 		nonlocal	 try
+assert 		else		 if 		not 		while
+break 		except		 import 	or 		with
+class 		False		 in 		pass 		yield
+continue 	finally 		is 		raise 		async
+def 		for 		lambda 	return 	await
+===== SLIDE 22 (layout: OBJECT) =====
+[Google Shape;295;p28] Variables and Keywords 
+[Google Shape;296;p28] 
+Naming rules for Variables
+Identifier / Variable names are case-sensitive. 
+
+
+
+[Google Shape;297;p28] myname
+[Google Shape;298;p28] myName
+[Google Shape;299;p28] python
+[Google Shape;300;p28] Python
+[PICTURE Google Shape;301;p28]
+[PICTURE Google Shape;302;p28]
+===== SLIDE 23 (layout: OBJECT) =====
+[Google Shape;307;p29] Variables and Keywords 
+[Google Shape;308;p29] Examples of valid identifier (variable) names are 
+I
+name_2_3
+Num
+num
+Max1
+ Examples of invalid identifier (variable) names are 
+2things
+this is spaced out
+my-name
+>a1b2_c3
+from
+===== SLIDE 24 (layout: OBJECT) =====
+[Google Shape;313;p30] Variables and Keywords 
+[Google Shape;314;p30] To display the value of a variable, you can use a print statement:
+	>>> n=17
+	>>> print(n) 🡪 17 
+	>>> pi=3.14
+	>>> print(pi) 🡪 3.14 
+
+The type of a variable is the type of the value it refers to.
+	>>> type(n) 🡪 int
+	>>> type(pi) 🡪 float
+===== SLIDE 25 (layout: OBJECT) =====
+[Google Shape;319;p31] Exercise 
+[Google Shape;320;p31] Is this variable name valid? (yes/no)
+1. my_marks
+2. _firstname
+3. n1+n2
+4. &name
+5. lambda
+6. 3rd_row
+7. dollarValue$
+8. basic pay
+9. gross-pay
+10. salary200
+===== SLIDE 26 (layout: Title Slide) =====
+[Google Shape;325;p32] Operators 
+===== SLIDE 27 (layout: OBJECT) =====
+[Google Shape;332;p33] Operators and operands
+[Google Shape;333;p33] Operators are special symbols that represent computations, like addition (+) and multiplication (*). 
+The values to which the operator is applied are called operands. 
+
+[Google Shape;334;p33] 2 + 3
+[Google Shape;335;p33] Operands
+[OTHER LINE (9) Google Shape;336;p33]
+[OTHER LINE (9) Google Shape;337;p33]
+[Google Shape;338;p33] Operator
+[OTHER LINE (9) Google Shape;339;p33]
+[Google Shape;340;p33] Expression
+[OTHER LINE (9) Google Shape;341;p33]
+===== SLIDE 28 (layout: OBJECT) =====
+[Google Shape;346;p34] Types of operators in Python:
+
+[Google Shape;347;p34] Operators and operands
+Arithmetic Operators
+ | Assignment Operators
+
+Comparison (Relational) Operators
+ | Logical Operators
+
+===== SLIDE 29 (layout: OBJECT) =====
+[Google Shape;353;g12a5e4308d7_0_6] Operators and operands
+[Google Shape;354;g12a5e4308d7_0_6] Arithmetic Operators
+ + (plus)
+      Adds two objects
+	>>> 3 + 5 
+		8 
+	>>> 'a' + 'b'
+		'ab’ 
+	>>> '1' + '3'
+		‘13’
+[Google Shape;355;g12a5e4308d7_0_6] concatenate two string values
+===== SLIDE 30 (layout: OBJECT) =====
+[Google Shape;360;p36] Operators and operands
+[Google Shape;361;p36] Arithmetic Operators
+
+[Google Shape;362;p36] - (minus)
+Gives the difference by subtracting the second number from the first number. 
+>>> 50 - 24 
+	26 
+if the first operand is absent it is assumed to be zero.
+>>> -5.2
+	-5.2
+===== SLIDE 31 (layout: OBJECT) =====
+[Google Shape;367;p37] Operators and operands
+[Google Shape;368;p37] Arithmetic Operators
+ * (multiply)
+   Gives the product of the two numbers. If the operand is string it returns the string repeated by the number of times specified in second operand.
+	>>> 2 * 3
+		6 
+	>>> 2* 3.5	
+		7.0
+	>>> 'a' * 3
+		‘aaa’ 
+
+===== SLIDE 32 (layout: OBJECT) =====
+[Google Shape;375;g12a5e4308d7_0_14] Operators and operands
+[Google Shape;376;g12a5e4308d7_0_14] Arithmetic Operators
+
+
+[Google Shape;377;g12a5e4308d7_0_14] ** (power)
+	x ** y Returns x to the power of y
+>>> 3**4
+	81
+>>> 0.25 ** 3 
+	 0.015625
+===== SLIDE 33 (layout: OBJECT) =====
+[Google Shape;382;p38] Operators and operands
+[Google Shape;383;p38] Arithmetic Operators
+/ (divide)
+      x / y    Divide x by y
+
+	>>> 10 / 5	
+		2.0	
+	>>>  13 / 3
+		4.333333333 
+	>>> 4 / 2
+		2.0
+
+===== SLIDE 34 (layout: OBJECT) =====
+[Google Shape;389;g12a5e4308d7_0_23] Operators and operands
+[Google Shape;390;g12a5e4308d7_0_23] Arithmetic Operators
+
+
+[Google Shape;391;g12a5e4308d7_0_23] // (floor division)
+x // y     Divide x by y and round the answer down to the nearest integer value. 
+>>> 13 // 3 
+	 4
+>>> -13 // 3 
+	-5
+>>>  9 / /1.81 
+	 4.0
+===== SLIDE 35 (layout: OBJECT) =====
+[Google Shape;396;p39] Operators and operands
+[Google Shape;397;p39] Arithmetic Operators
+% (modulus)
+      Returns the remainder of the division
+>>> 75 % 9 
+	3
+>>>13 % 3
+	1
+>>>25.5 % 2.25
+	0.75 
+[PICTURE Google Shape;398;p39]
+===== SLIDE 36 (layout: OBJECT) =====
+[Google Shape;404;p42] Assignment Operators
+= (assign)
+Assigns values from right side to left side operand
+>>> a=5              >>>n=20
+			>>> num= n +10
+Assignment to same value
+Same value can be assigned to multiple variables
+>>> x=y=z=10   
+Multiple assignments
+Different values can be assigned to more than one variables
+>>> x, y, z = 10, “hai”, 3.5
+[Google Shape;405;p42] Operators and operands
+===== SLIDE 37 (layout: OBJECT) =====
+[Google Shape;416;p43] Assignment Operators
++= (Add and assign)
+Adds the right operand to the left operand and assign the result to the left operand
+
+>>> num+=10 
+
+Performs the arithmetic operation (+) first then do the assignment
+
+-=, *=, /=, //=, %=, **=
+>>> num*=2  equivalent to
+>>> num**=3 equivalent to
+[Google Shape;417;p43] Operators and operands
+[Google Shape;418;p43] num = num + 10
+[Google Shape;419;p43] num = num * 2
+[Google Shape;420;p43] num = num ** 3
+===== SLIDE 38 (layout: OBJECT) =====
+[Google Shape;425;p45] Comparison (Relational) Operators
+All comparison operators return True or False
+[PICTURE Google Shape;426;p45]
+[Google Shape;427;p45] Operators and operands
+[Google Shape;428;p45] A > B 
+[Google Shape;429;p45] A < B 
+[Google Shape;430;p45] A >= B 
+[Google Shape;431;p45] A <= B 
+[Google Shape;432;p45] A == B 
+[Google Shape;433;p45] A != B 
+===== SLIDE 39 (layout: OBJECT) =====
+[PICTURE Google Shape;440;p46]
+===== SLIDE 40 (layout: OBJECT) =====
+[PICTURE Google Shape;445;p48]
+[Google Shape;446;p48] >>> 5 < 3 
+ False 
+>>> 3 < 5 
+True 
+>>> 5 > 3 
+True  
+>>> x = 3
+>>> y = 6 
+>>> x <= y 
+True
+[Google Shape;447;p48] Operators and operands
+[Google Shape;448;p48] >>> 3 < 5 < 7 
+True 
+>>> 3>5 
+False
+>>> x = 4
+>>> y = 3
+>>> x >= 3 
+True
+===== SLIDE 41 (layout: OBJECT) =====
+[PICTURE Google Shape;453;p49]
+[Google Shape;454;p49] >>> x = 2
+>>> y = 2
+>>> x == y 
+True
+[Google Shape;455;p49] Operators and operands
+[Google Shape;456;p49] >>> x = 'str'
+>>> y = 'stR'
+>>> x == y 
+False
+[Google Shape;457;p49] >>> x = 2 
+>>> y = 3 
+>>> x != y 
+True
+===== SLIDE 42 (layout: OBJECT) =====
+[Google Shape;462;p51] Logical Operators
+The operands are Expressions and the result is  Boolean 
+Logical operators return True or False
+
+
+[Google Shape;463;p51] Operators and operands
+[PICTURE Google Shape;464;p51]
+[Google Shape;465;p51] A and B 
+[Google Shape;466;p51] A or B 
+[Google Shape;467;p51] not A 
+not B 
+===== SLIDE 43 (layout: OBJECT) =====
+[Google Shape;472;p52] Logical Operators
+and (Boolean AND)
+
+[Google Shape;473;p52] Operators and operands
+[Google Shape;474;p52] True if Both operands are True. 
+[PICTURE Google Shape;475;p52]
+===== SLIDE 44 (layout: OBJECT) =====
+[Google Shape;480;p53] Python will not evaluate B since it knows that the left-hand side (A) of the 'and' expression is False which implies that the whole expression will be False irrespective of the other values. This is called short-circuit evaluation.
+
+[Google Shape;481;p53] Operators and operands
+[Google Shape;482;p53] >>> A = False 
+>>> B = True
+>>>A and B 
+[PICTURE Google Shape;483;p53]
+===== SLIDE 45 (layout: OBJECT) =====
+[Google Shape;488;p54] Logical Operators
+or (boolean OR)
+
+[Google Shape;489;p54] Operators and operands
+[G-PICTURE Google Shape;491;p54]
+[G-PICTURE Google Shape;492;p54]
+[G-PICTURE Google Shape;493;p54]
+[Google Shape;494;p54] True if Either operands are True. 
+===== SLIDE 46 (layout: OBJECT) =====
+[Google Shape;500;p55] Logical Operators
+not (boolean NOT)
+If x is True , it returns False . If x is False , it returns True .
+
+[Google Shape;501;p55] Operators and operands
+[G-PICTURE Google Shape;503;p55]
+[G-PICTURE Google Shape;504;p55]
+===== SLIDE 47 (layout: Title Slide) =====
+[Google Shape;509;p56] Expressions
+===== SLIDE 48 (layout: OBJECT) =====
+[Google Shape;515;p57] Expressions and Statements
+[Google Shape;516;p57] Expressions
+An expression is a combination of values, variables, and operators.
+             17 
+             x 
+             x + 17
+
+If you type an expression in interactive mode, the interpreter evaluates it and displays the result: 
+           >>> 1 + 1
+           	2
+
+[OTHER LINE (9) Google Shape;517;p57]
+[Google Shape;518;p57] Value 
+[OTHER LINE (9) Google Shape;519;p57]
+[Google Shape;520;p57] Variable  
+[OTHER LINE (9) Google Shape;521;p57]
+[Google Shape;522;p57] Expression 
+===== SLIDE 49 (layout: OBJECT) =====
+[Google Shape;527;p58] Expressions and Statements
+[Google Shape;528;p58] Statement
+A statement is a unit of code that the Python interpreter can execute. 
+We have seen two kinds of statements: 
+print being an expression statement 
+Produce an output on the screen
+assignment.
+The assignment statement produces no output.
+
+When you type a statement in interactive mode, the interpreter executes it and displays the result, if there is one.
+A script usually contains a sequence of statements. If there is more than one statement, the results appear one at a time as the statements execute.
+Eg:           print(1)
+                x = 2
+               print(x)
+produces the output
+1
+2
+===== SLIDE 50 (layout: OBJECT) =====
+[Google Shape;533;p59] Exercise
+[Google Shape;534;p59] >>> 3 * “python”
+“pythonpythonpython”
+
+>>> 3 * “3”
+“333”
+
+>>> A , B = 11/5 , 11%5
+>>> print(A)
+>>> print(B)
+2.2
+1
+[Google Shape;535;p59] >>> a=7
+>>> a+=4
+11
+
+>>> A , B = 10/3 , 10//3
+>>> print(A)
+>>> print(B)
+3.33333333
+3
+===== SLIDE 51 (layout: OBJECT) =====
+[Google Shape;540;p60] Order of Operations 
+[Google Shape;541;p60] When more than one operator appears in an expression, the order of evaluation depends on the rules of precedence. 
+For mathematical operators, Python follows mathematical convention. The acronym PEMDAS is a useful way to remember the rules:
+
+
+
+
+
+Parentheses have the highest precedence and can be used to force an expression to evaluate in the order you want. Since expressions in parentheses are evaluated first. 
+[PICTURE Google Shape;542;p60]
+===== SLIDE 52 (layout: OBJECT) =====
+[PICTURE Google Shape;547;p61]
+[Google Shape;548;p61] Order of Operations 
+[Google Shape;549;p61] Operators with the same precedence are evaluated from left to right.
+===== SLIDE 53 (layout: OBJECT) =====
+[Google Shape;554;p62] Order of Operations 
+[Google Shape;555;p62]  2 * (3-1)
+ 
+
+ 2 * 2
+
+ 4
+
+[Google Shape;557;p62] 1st Expression 
+[Google Shape;559;p62] 2nd Expression 
+===== SLIDE 54 (layout: OBJECT) =====
+[Google Shape;564;p63] Order of Operations 
+[Google Shape;565;p63]   (1+1)**(5-2)  
+
+
+ 2 **(5-2)  
+
+      2 **3  
+
+    8
+[Google Shape;567;p63] 1st Expression 
+[Google Shape;569;p63] 2nd Expression 
+[Google Shape;571;p63] 3rd Expression 
+===== SLIDE 55 (layout: OBJECT) =====
+[Google Shape;576;p64] Order of Operations 
+[Google Shape;577;p64] 10 % 3 * 4 +5 * 2 
+
+ 1 * 4 + 5 * 2  
+
+ 4 + 5 * 2   
+
+   4 + 10 
+14 
+[Google Shape;579;p64] 1st Expression 
+[Google Shape;581;p64] 2nd Expression 
+[Google Shape;583;p64] 3rd Expression 
+===== SLIDE 56 (layout: OBJECT) =====
+[Google Shape;606;p66] Examples
+2**1+1 is 3, not 4, 
+2**1+1 -> 2 +1 ->  3
+ 3*1**3 is 3, not 27.
+3*1**3 -> 3 * 1 -> 3
+2*3-1 is 5, not 4,
+2*3-1 -> 6 -1 -> 5
+6+4/2 is 8, not 5.
+6+4/2 ->  6 + 2  -> 8
+
+[Google Shape;607;p66] Order of Operations 
+===== SLIDE 57 (layout: OBJECT) =====
+[Google Shape;615;p67] >>> A , B , C = 10 , 20 , 30
+>>>  a > b 
+Error
+>>> A > B 
+False
+>>> A < C 
+True 
+>>> B != C
+True 
+
+
+
+
+
+[Google Shape;616;p67] 
+
+>>> A + 20 > B
+True
+>>> A +20 == C 
+True 
+>>> B != C -10 
+False
+
+
+
+
+
+===== SLIDE 58 (layout: OBJECT) =====
+[Google Shape;624;p68] >>> A , B , C = 10 , 20 , 30
+>>>   A > B and B < C
+False
+>>>   A > B or B < C
+True
+>>>   A < B and B < C
+True
+>>>   A == 10 and B != 20
+False
+>>>   A == 10 and  not B != 20
+True
+
+
+
+
+[Google Shape;625;p68] A > B False 
+B < C True 
+False and True
+False
+===== SLIDE 59 (layout: BLANK) =====
+[PICTURE Google Shape;632;p69]
+[Google Shape;533;p59] Exercise
+===== SLIDE 60 (layout: Title Slide) =====
+[Google Shape;637;p70] Input/ Output
+===== SLIDE 61 (layout: OBJECT) =====
+[Google Shape;643;p71] Input and Output
+[Google Shape;644;p71] There will be situations where your program must interact with the user. You want to take input from the user. We can achieve this using the input() function.
+
+Syntax of input():
+   variable = input(prompt)
+prompt – is a string or message to tell the user about what input is required
+prompt is optional
+The value typed from keyboard will be assigned to the variable on the left side
+Every input received from the use will be accepted as a string. It must be converted as needed.
+
+
+
+===== SLIDE 62 (layout: BLANK) =====
+[PICTURE Google Shape;649;p72]
+[Google Shape;650;p72] Name = input(“Enter Name :”)
+[PICTURE Google Shape;651;p72]
+[Google Shape;652;p72] String Value 
+===== SLIDE 63 (layout: BLANK) =====
+[PICTURE Google Shape;657;p73]
+[Google Shape;658;p73] Age = input(“Enter Age   :”)
+[Google Shape;659;p73] Enter Age   
+[Google Shape;660;p73] 20
+[PICTURE Google Shape;661;p73]
+[Google Shape;662;p73] Age
+[Google Shape;663;p73] “20“ 
+===== SLIDE 64 (layout: OBJECT) =====
+[Google Shape;670;p74] Age = int(input(“Enter Age :”) )
+[G-PICTURE Google Shape;672;p74]
+[G-PICTURE Google Shape;677;p74]
+[G:Google Shape;678;p74] Age
+[G:Google Shape;679;p74] 20
+[OTHER LINE (9) Google Shape;680;p74]
+[Google Shape;681;p74] To convert string to integer 
+===== SLIDE 65 (layout: OBJECT) =====
+[Google Shape;686;p75] Data Type Conversion 
+[Google Shape;687;p75] int(X)
+Convert value of X into integer data type
+
+float (X)
+Convert value of X into float data type
+
+===== SLIDE 66 (layout: OBJECT) =====
+[Google Shape;692;p76] Input and Output
+[Google Shape;693;p76] There will be situations where your program want to print some results, use the print() function. 
+
+Syntax of print():
+   print(*objects)
+
+objects is the object to the printed. 
+* indicates that there can be more than one object
+
+
+
+
+===== SLIDE 67 (layout: OBJECT) =====
+[Google Shape;698;p77] Input and Output
+[Google Shape;699;p77] 
+Name= input( “Enter your name : ” )
+print( “Hello ” + Name + “!”)
+
+
+
+[PICTURE Google Shape;700;p77]
+[Google Shape;702;p77] Hilal
+[G-PICTURE Google Shape;704;p77]
+[G:Google Shape;705;p77] Hello Hilal !
+
+[PICTURE Google Shape;706;p77]
+[Google Shape;707;p77] “Hilal”
+===== SLIDE 68 (layout: OBJECT) =====
+[Google Shape;713;p78] num1 =input( “Enter a number : ” )       
+num2 =input(“Enter another number : ”)       result =num1+ num2       
+print(result)
+[G-PICTURE Google Shape;715;p78]
+[G:Google Shape;716;p78] num2
+[G:Google Shape;717;p78] “20”
+[G-PICTURE Google Shape;719;p78]
+[G:Google Shape;720;p78] num1
+[G:Google Shape;721;p78] “10”
+[OTHER LINE (9) Google Shape;722;p78]
+[OTHER LINE (9) Google Shape;723;p78]
+[G-PICTURE Google Shape;725;p78]
+[G:Google Shape;726;p78] Enter another number   
+[G:Google Shape;727;p78] 20
+[G-PICTURE Google Shape;729;p78]
+[G:Google Shape;730;p78] Enter a number   
+[G:Google Shape;731;p78] 10
+===== SLIDE 69 (layout: OBJECT) =====
+[Google Shape;737;p79] num1 =input( “Enter a number : ” )       
+num2 =input(“Enter another number : ”)       result =num1+ num2       
+print(result)
+[G-PICTURE Google Shape;739;p79]
+[G:Google Shape;740;p79] num1
+[G:Google Shape;741;p79] “10”
+[OTHER LINE (9) Google Shape;742;p79]
+[OTHER LINE (9) Google Shape;743;p79]
+[G-PICTURE Google Shape;745;p79]
+[G:Google Shape;746;p79] 1020
+[G-PICTURE Google Shape;748;p79]
+[G:Google Shape;749;p79] num2
+[G:Google Shape;750;p79] “20”
+[G-PICTURE Google Shape;752;p79]
+[G:Google Shape;753;p79] result
+[G:Google Shape;754;p79] “10”+”20”
+===== SLIDE 70 (layout: OBJECT) =====
+[Google Shape;760;p80] num1 =int(input( “Enter a number : ” )) 
+num2 =int(input(“Enter another number : ”))       result =num1+ num2       
+print(result)
+[G-PICTURE Google Shape;762;p80]
+[G:Google Shape;763;p80] num2
+[G:Google Shape;764;p80] 20
+[G-PICTURE Google Shape;766;p80]
+[G:Google Shape;767;p80] num1
+[G:Google Shape;768;p80] 10
+[OTHER LINE (9) Google Shape;769;p80]
+[OTHER LINE (9) Google Shape;770;p80]
+[G-PICTURE Google Shape;772;p80]
+[G:Google Shape;773;p80] Enter another number   
+[G:Google Shape;774;p80] 20
+[G-PICTURE Google Shape;776;p80]
+[G:Google Shape;777;p80] Enter a number   
+[G:Google Shape;778;p80] 10
+===== SLIDE 71 (layout: OBJECT) =====
+[Google Shape;784;p81] num1 =int(input( “Enter a number : ” )) 
+num2 =int(input(“Enter another number : ”)) result =num1+ num2       
+print(result)
+[G-PICTURE Google Shape;786;p81]
+[G:Google Shape;787;p81] num1
+[G:Google Shape;788;p81] 10
+[OTHER LINE (9) Google Shape;789;p81]
+[OTHER LINE (9) Google Shape;790;p81]
+[G-PICTURE Google Shape;792;p81]
+[G:Google Shape;793;p81] 30
+[G-PICTURE Google Shape;795;p81]
+[G:Google Shape;796;p81] num2
+[G:Google Shape;797;p81] 20
+[G-PICTURE Google Shape;799;p81]
+[G:Google Shape;800;p81] result
+[G:Google Shape;801;p81] 10+20
+===== SLIDE 72 (layout: OBJECT) =====
+[Google Shape;807;p82] num1 =float(input( “Enter a number : ” )) 
+num2 =float(input(“Enter another number : ”))       result =num1+ num2       
+print(result)
+[G-PICTURE Google Shape;809;p82]
+[G:Google Shape;810;p82] num2
+[G:Google Shape;811;p82] 8.3
+[G-PICTURE Google Shape;813;p82]
+[G:Google Shape;814;p82] num1
+[G:Google Shape;815;p82] 5.2
+[OTHER LINE (9) Google Shape;816;p82]
+[OTHER LINE (9) Google Shape;817;p82]
+[G-PICTURE Google Shape;819;p82]
+[G:Google Shape;820;p82] Enter another number   
+[G:Google Shape;821;p82] 8.3
+[G-PICTURE Google Shape;823;p82]
+[G:Google Shape;824;p82] Enter a number   
+[G:Google Shape;825;p82] 5.2
+===== SLIDE 73 (layout: OBJECT) =====
+[Google Shape;831;p83] num1 =float(input( “Enter a number : ” )) 
+num2 =float(input(“Enter another number : ”)) result =num1+ num2       
+print(result)
+[G-PICTURE Google Shape;833;p83]
+[G:Google Shape;834;p83] num1
+[G:Google Shape;835;p83] 5.2
+[OTHER LINE (9) Google Shape;836;p83]
+[OTHER LINE (9) Google Shape;837;p83]
+[G-PICTURE Google Shape;839;p83]
+[G:Google Shape;840;p83] 13.5
+[G-PICTURE Google Shape;842;p83]
+[G:Google Shape;843;p83] num2
+[G:Google Shape;844;p83] 8.3
+[G-PICTURE Google Shape;846;p83]
+[G:Google Shape;847;p83] result
+[G:Google Shape;848;p83] 5.2 + 8.3
+===== SLIDE 74 (layout: OBJECT) =====
+[Google Shape;853;p84] Input and Output
+[Google Shape;854;p84] name =input( “Enter your name : ” )
+age = input( “Enter your age :” )
+print( “Hello” , name , “ ! Your age is ” , age , “ years” )
+
+Output:
+Enter your name : Hilal
+Enter your age : 21
+Hello Hilal ! Your age is 21 years
+
+    
+
+===== SLIDE 75 (layout: OBJECT) =====
+[Google Shape;859;p85] Formatted output
+
+name =input( “Enter your name : ” )
+age = input( “Enter your age :” )
+ print( “Hello ”  , name , “ ! Your age is ” , age , “ years” )
+
+
+
+name =input( “Enter your name : ” )
+age = input( “Enter your age :” )
+ print( f“Hello {name} ! Your age is {age} years” )
+
+
+
+
+[Google Shape;860;p85] Input and Output
+[Google Shape;861;p85] The above print statement can be simplified by using formatted output. 
+Use ‘f’ inside the parenthesis of the print() and variables inside curly braces.
+===== SLIDE 76 (layout: OBJECT) =====
+[Google Shape;866;p86] Printing on same line using multiple print() statements
+The following code print the output in 2 lines. 
+Since, every print function moves the cursor to the next line
+
+ 
+ 
+
+  If you want to remain on the same line after a print(), then use a parameter end=“ ”
+
+[Google Shape;867;p86] Input and Output
+[PICTURE Google Shape;868;p86]
+[PICTURE Google Shape;869;p86]
+===== SLIDE 77 (layout: OBJECT) =====
+[Google Shape;875;p87] By default, python’s print() function ends with a newline.
+Python’s print() function comes with a parameter called ‘end’. By default, the value of this parameter is ‘\n’
+	print( “Hello” , end= ‘\n’)
+	print ( “World” )
+You can end a print statement with any character/string using this parameter.
+		
+
+
+
+[OTHER LINE (9) Google Shape;876;p87]
+[PICTURE Google Shape;877;p87]
+[PICTURE Google Shape;878;p87]
+[PICTURE Google Shape;879;p87]
+[Google Shape;880;p87] 		print( “Hello” , end= ‘  ’)
+		print ( “World” )
+		
+[Google Shape;881;p87] print( “Hello” , end= ‘ / ’)
+print ( “World” )
+===== SLIDE 78 (layout: Title Slide) =====
+[Google Shape;886;p88] Comments 
+===== SLIDE 79 (layout: OBJECT) =====
+[Google Shape;894;p89] To add notes to your programs to explain in natural language what the program is doing. These notes are called comments, and in Python they start with the # symbol. 
+Comments are most useful to figure out what the code does; it is
+     much more useful to explain why.
+
+# compute the percentage of the hour that has elapsed
+          percentage = (minute * 100) / 60
+Everything from the # to the end of the line is ignored; it has no effect on the program.
+                       or
+percentage = (minute * 100) / 60    # percentage of an hour
+[Google Shape;895;p89] Comments 
+===== SLIDE 80 (layout: OBJECT) =====
+[Google Shape;900;p90] Exercise
+[Google Shape;901;p90] Write a program that will read value in radius to compute the area of a circle. Then display the computed area.
+
+Pi=3.14
+Area= Pi * radius * radius 
+===== SLIDE 81 (layout: OBJECT) =====
+[Google Shape;908;p91] Exercise 
+[Google Shape;909;p91] Write a python program that represent a calculator. Where the program read two numbers from user, perform + , - , *  and /   calculations, then display the result of calculations. 
+===== SLIDE 82 (layout: OBJECT) =====
+[Google Shape;915;p92] Write a measurement conversion program that will read a person’s weight in grams and will display its converted value to kilogram and centigram. Then display an appropriate output.
+Kilogram = gram /1000
+Centigram = gram * 100 
+[Google Shape;908;p91] Exercise 
+===== SLIDE 83 (layout: OBJECT) =====
+[Google Shape;920;p93] References
+[Google Shape;921;p93] LEARNING RESOURCE REFERENCES
+1
+Charles R. Severance (2016), Python for Everybody. Exploring Data Using Python 3. Open Education Resource, Creative Commons Attributions (CC-BY-NC-SA 3.0). Retrieved from http://do1.dr-chuck.com/pythonlearn/EN_us/pythonlearn.pdf  
+Swaroop C H(2013). A Byte of Python. Open Education Resource, Creative Commons Attributions (CC BY-SA 4.0).Retrieved from https://python.swaroopch.com/ 
+Alan B. Downey (2016). Think Python: How to think Like a computer Scientist. Open Education Resource, Creative Commons Attributions (CC BY-NC 3.0). Retrieved from  http://greenteapress.com/thinkpython2/thinkpython2.pdf
+2
+Fabrizio Romano (2018), Learn Python Programming : A Beginner's Guide to Learning the Fundamentals of Python Language to Write Efficient, High-Quality Code, 2nd Edition. Packt Publishing Limited. Retrieved from https://ebookcentral.proquest.com/lib/shctom/reader.action?docID=5446038&ppg=1
+

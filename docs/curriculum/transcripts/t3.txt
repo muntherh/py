@@ -1,0 +1,457 @@
+===== SLIDE 1 (layout: Title Slide) =====
+[Rectangle 2] Topic 3
+[Rectangle 3] CONDITIONAL EXECUTION
+===== SLIDE 2 (layout: Title and Content) =====
+[Title 1] Objectives
+[Content Placeholder 2] The objective of this chapter is to know about
+Conditional execution
+Alternative execution
+Chained conditionals
+Nested conditionals
+
+===== SLIDE 3 (layout: Title Only) =====
+[Title 1] Conditional Execution
+[Content Placeholder 1] Check for certain condition and then execute or skip a sequence of statements.
+Used to test logically whether the condition is True or False, a decision-making statement.
+
+
+
+[PICTURE Picture 2]
+[Rectangle 4] The condition execution will execute if the condition is True.
+[OTHER LINE (9) Straight Arrow Connector 5]
+===== SLIDE 4 (layout: Two Content) =====
+[PICTURE Picture 2]
+[Rectangle 4] Condition : The Weather is nice
+[OTHER LINE (9) Straight Arrow Connector 5]
+[Rectangle 6] If the weather is nice : go to the beach 
+[OTHER LINE (9) Straight Arrow Connector 8]
+[Rectangle 9] If the weather is not nice: will not go to the beach
+[OTHER LINE (9) Straight Arrow Connector 10]
+[Title 1] Conditional Execution
+===== SLIDE 5 (layout: Title Only) =====
+[Title 1] Conditional Execution
+[Content Placeholder 1] It is used to control the flow of execution of the statements.
+
+
+
+
+
+[PICTURE Picture 3]
+===== SLIDE 6 (layout: Title and Content) =====
+[Title 1] Conditional Execution
+[Content Placeholder 2] The if statement is a decision-making statement.
+
+Syntax
+		if  condition :
+			<statements>
+
+
+
+Boolean expression after the if statement is called the condition. 
+We end the if statement with a colon character (:) 
+The true statements are indented Using tab in keyboard 
+
+[TextBox 4] indentation
+===== SLIDE 7 (layout: Title and Content) =====
+[Content Placeholder 2] Syntax
+		if  condition :
+			<statements>
+
+the condition is a Boolean expression.
+
+
+Use the logical operators. 		
+
+[OTHER LINE (9) Connector: Elbow 5]
+[OTHER LINE (9) Connector: Elbow 10]
+[TextBox 12] True
+[TextBox 13] False
+[PICTURE Picture 2]
+[G:Rectangle: Rounded Corners 14] Comparison operators 
+[G:Rectangle 15] ==
+[G:Rectangle 18] !=
+[G:Rectangle 19] <
+[G:Rectangle 20] <=
+[G:Rectangle 21] >
+[G:Rectangle 22] >=
+[TextBox 40] Use the comparison operators 
+===== SLIDE 8 (layout: Title and Content) =====
+[Content Placeholder 2] Syntax
+		if  condition :
+			<statements>
+
+<statements> the statement will be executed only if the condition is returning True.
+
+===== SLIDE 9 (layout: Title and Content) =====
+[Rectangle 2] Example
+[Content Placeholder 1] Program that check if X is positive number. Prints x is positive.
+
+
+
+
+
+
+
+[G:Rectangle 22] False
+[G:TextBox 1] Condition
+[G:TextBox 29] Statement is executed 
+[G:TextBox 29] Statement is skipped  
+[Rectangle 2] What is the condition to be checked?
+x is positive ( x > 0)
+What will happen if the condition is True? 
+Print x is positive
+===== SLIDE 10 (layout: Title and Content) =====
+[Title 1] Example
+[G:Rectangle 22] False
+[G:TextBox 1] Condition
+[G:TextBox 29] Statement is executed 
+[G:TextBox 29] Statement is skipped  
+[TextBox 29] x=10
+if  x>0 :
+	print("x is positive")
+===== SLIDE 11 (layout: Title and Content) =====
+[Title 1] Example
+[Content Placeholder 2] 
+2. Write a Python program that check if number is negative.
+
+
+[PICTURE Picture 3]
+===== SLIDE 12 (layout: Title and Content) =====
+[PICTURE Picture 1]
+[Content Placeholder 2] Example
+1. A python program that compare between x and y values. And check if the value of x is less than y. prints “x is small” if True.
+
+
+
+===== SLIDE 13 (layout: Title and Content) =====
+[Title 1] Exercise
+[Content Placeholder 2] write a program that ask the user to enter two numbers and check if these two numbers are the same.
+
+[PICTURE Picture 1]
+===== SLIDE 14 (layout: Title and Content) =====
+[Content Placeholder 2] Examples
+3. Note that there can be more than one statement after an if 
+
+
+
+
+
+[PICTURE Picture 3]
+[Title 1] Conditional Execution
+[TextBox 5] all the statements at the matching indentation level, are considered part of the same block. (if-block)
+===== SLIDE 15 (layout: Title and Content) =====
+[Title 1] EXERCISE 
+[Content Placeholder 2] Write a program that ask the user to enter two numbers. If the second numbers is not equals to zero, calculate the division of the two numbers and display the result of division.
+
+[PICTURE Picture 3]
+[PICTURE Picture 4]
+[OTHER LINE (9) Straight Connector 8]
+===== SLIDE 16 (layout: Title and Content) =====
+[Content Placeholder 2] Examples
+4. Accept an integer input from user and check if number is bigger than 1000
+
+
+[Title 1] Conditional Execution
+[PICTURE Picture 2]
+[OTHER LINE (9) Straight Connector 4]
+[PICTURE Picture 6]
+[OTHER LINE (9) Straight Connector 12]
+[Rectangle 15] The following statement: without indentation 
+Always executed 
+[OTHER LINE (9) Straight Arrow Connector 16]
+[OTHER LINE (9) Straight Arrow Connector 18]
+===== SLIDE 17 (layout: Title and Content) =====
+[Title 1] EXERCISE 
+[Content Placeholder 2] Write a program that asks the user about his score in Quiz 1 out of 10.
+if the student score is higher than or equals to 7.5 then display a message “congratulation on your good score” .
+At the end, it always display message “thank you for sharing your score”. 
+[PICTURE Picture 3]
+[PICTURE Picture 4]
+===== SLIDE 18 (layout: Title and Content) =====
+[Title 1] EXERCISE 
+[Content Placeholder 2] Write a program for an airline company. that ask the user about his luggage weight. 
+if the luggage weight is higher than 50, it shows a warning message that he will be paying extra 25$ for his luggage. 
+At the end, it always thank the user for his business.
+[PICTURE Picture 1]
+[PICTURE Picture 2]
+[OTHER LINE (9) Straight Connector 5]
+===== SLIDE 19 (layout: Title Slide) =====
+[Title 1] Alternative Execution 
+===== SLIDE 20 (layout: Two Content) =====
+[PICTURE Picture 2]
+[Rectangle 2] Alternative Execution
+[Content Placeholder 1] Alternative Execution, in which there are two possibilities, and the condition determines which one gets executed.
+[TextBox 1] Condition
+[TextBox 1] Statement executed if the condition is False 
+[TextBox 1] Statement executed if the condition is True
+===== SLIDE 21 (layout: Two Content) =====
+[Rectangle 2] Alternative Execution
+[Content Placeholder 2] if...else statement is used in alternative execution
+Syntax
+		if  condition:
+		      <True part statements>
+		else:
+		      <False part statements>
+
+Remember:
+Boolean expression after the if statement is called the condition. 
+We end the if statement  and the else with a colon character (:) 
+the line(s) after the if  and the else statements are indented.
+
+
+[TextBox 4] indentation
+===== SLIDE 22 (layout: Two Content) =====
+[Content Placeholder 2] Program that check if x is even or odd number 
+[G-PICTURE Picture 5]
+[G-PICTURE Picture 6]
+[G-PICTURE Picture 7]
+[G:Rectangle 9] x%2 == 0
+[G:Rectangle 11] print(‘x is even’)
+[G:Rectangle 24] True
+[G:Rectangle 26] print(‘x is odd’)
+[G:Rectangle 33] False
+[Rectangle 35] Condition 
+[OTHER LINE (9) Straight Arrow Connector 36]
+[Rectangle 40] 
+<False part statements>
+ 
+[OTHER LINE (9) Straight Arrow Connector 41]
+[Rectangle 57] 
+<True part statements>
+ 
+[OTHER LINE (9) Straight Arrow Connector 58]
+===== SLIDE 23 (layout: Title and Content) =====
+[PICTURE Picture 6]
+[TextBox 37] 	if  x%2 == 0:
+		      print(‘x is even’)
+	else:
+		      print(‘x is odd’)
+
+[OTHER LINE (9) Straight Arrow Connector 38]
+[OTHER LINE (9) Straight Arrow Connector 41]
+[OTHER LINE (9) Straight Arrow Connector 44]
+===== SLIDE 24 (layout: Two Content) =====
+[Rectangle 2] Alternative Execution
+[Rectangle 6] Examples
+A program to check if the number entered by the user is single digit or higher.
+[PICTURE Picture 2]
+===== SLIDE 25 (layout: Two Content) =====
+[Rectangle 2] Alternative Execution
+[Rectangle 6] Examples
+Program to check if a number is Odd or Even 
+[OTHER PLACEHOLDER (14) Content Placeholder 4]
+===== SLIDE 26 (layout: Section Header) =====
+[Title 1] Exercise 
+[Text Placeholder 2] Write a program that ask the user for a number. Then check if the number is greater that 50 or less than 50. 
+[PICTURE Picture 4]
+[PICTURE Picture 6]
+[PICTURE Picture 8]
+===== SLIDE 27 (layout: Two Content) =====
+[Rectangle 2] Alternative Execution
+[Content Placeholder 4] Single Line if statement(conditional expression):
+
+
+
+it is not a control structure that directs the flow of program execution. It acts more like an operator that defines an expression.
+<conditional_expr> is evaluated first. If it is True, the expression evaluates to <expr1>. If it is False, the expression evaluates to <expr2>.
+[PICTURE Picture 2]
+===== SLIDE 28 (layout: Title and Content) =====
+[Title 1] conditional expression
+[Content Placeholder 2] x = 10
+Result = 100 if x>=10 else 200
+print(Result)
+
+Output:
+100
+If True store value 100 to Result  
+if False store 200 to Result
+
+===== SLIDE 29 (layout: Title and Content) =====
+[Title 1] conditional expression
+[PICTURE Picture 4]
+[Content Placeholder 5] A program that print different statement based on the weather. If it is raining it prints Let’s go to the beach. If it not raining, it prints Let’s go to the library.
+
+[PICTURE Picture 7]
+===== SLIDE 30 (layout: Title and Content) =====
+[Title 1] Exercise
+[Content Placeholder 2] A program that asks the user about his age. If the user enter number less than 21 it prints Minor. If the user enter number greater or equals to 21 it prints Adult. Using conditional expression.
+[PICTURE Picture 8]
+===== SLIDE 31 (layout: Title Slide) =====
+[Title 1] Chained Conditionals 
+===== SLIDE 32 (layout: Two Content) =====
+[PICTURE Picture 2]
+[Title 1] Chained conditionals
+[Content Placeholder 2] Chained conditions allows more than two possibilities and need more than two branches. 
+Used to check more than one condition.
+
+===== SLIDE 33 (layout: Title and Content) =====
+[Title 1] Chained conditionals
+[Content Placeholder 2] elif – is a keyword used in Python in replacement of else if  to place another condition in the program. This is called chained conditional.
+Any number of elif part can be there.
+Syntax
+		if  condition1:
+		           <statements 1>
+		elif condition2:
+			<statements 2>
+		elif condition3:
+			 <statements 3>
+			   .
+			   .
+		else:
+		      	<statements n>
+
+[TextBox 4] else part is optional.
+[OTHER LINE (9) Straight Arrow Connector 5]
+===== SLIDE 34 (layout: Title and Content) =====
+[Title 1] Chained conditionals
+[Content Placeholder 2] Examples
+Program that check the values of x and y. x is less, greater or equals to y.  
+[PICTURE Picture 5]
+===== SLIDE 35 (layout: Two Content) =====
+[PICTURE Picture 5]
+[PICTURE Picture 2]
+===== SLIDE 36 (layout: Two Content) =====
+[Content Placeholder 2] Exercise – a python program that will find the largest among three numbers.
+
+
+[Title 1] Chained Conditionals
+===== SLIDE 37 (layout: Two Content) =====
+[Content Placeholder 2] Examples – a python program that will find the largest among three numbers.
+
+
+[PICTURE Picture 1]
+===== SLIDE 38 (layout: Two Content) =====
+[Title 1] Exercise
+[Content Placeholder 2] Write a program that reads a numeric grade(mark in one of the courses) from a student and displays a corresponding character grade for that numeric grade. 
+The program shall print:
+ ‘A’ for exam grades greater than or equal to 90
+ ‘B’ for grades in the range 80 to 89
+‘C’ for grades in the range 70 to 79
+‘D’ for grades in the range 60 to 69
+‘F’ for all other grades.
+===== SLIDE 39 (layout: Title Slide) =====
+[Title 1] Nested Conditions
+===== SLIDE 40 (layout: Two Content) =====
+[PICTURE Picture 2]
+[Title 1] Nested Conditions
+[Content Placeholder 2] We can write an entire if… else statement in another if… else statement called nesting, and the statement is called nested if.
+In a nested if construct, you can have an if … elif … else construct inside an if … elif.. Else construct.
+
+
+===== SLIDE 41 (layout: Title and Content) =====
+[TextBox 8] Syntax
+
+	if  condition1:
+		if  condition2:
+			<statements 1>
+		else:
+			<statements 2>
+	
+	else:
+		<statements 3>
+===== SLIDE 42 (layout: Two Content) =====
+[G-PICTURE Picture 5]
+[G-PICTURE Picture 6]
+[G-PICTURE Picture 7]
+[G-PICTURE Picture 8]
+[G-PICTURE Picture 9]
+[G-PICTURE Picture 10]
+[G-PICTURE Picture 11]
+[G-PICTURE Picture 12]
+[G-PICTURE Picture 13]
+[G-PICTURE Picture 14]
+[G-PICTURE Picture 15]
+[G-PICTURE Picture 16]
+[G-PICTURE Picture 17]
+[G-PICTURE Picture 18]
+[G-PICTURE Picture 19]
+[G-PICTURE Picture 20]
+[G:Rectangle 22] x == y
+[G:Rectangle 30] No
+[G:Rectangle 31] print(‘equal’)
+[G:Rectangle 39] Yes
+[G:Rectangle 40] x < y
+[G:Rectangle 42] print(’‘greater’)
+[G:Rectangle 56] No
+[G:Rectangle 57] print(‘less’)
+[G:Rectangle 65] Yes
+[Title 1] Nested Conditions
+[TextBox 1] A Program that check the values of x and y. x is less, greater or equals to y. 
+[Rectangle 2] Condition 1 
+[OTHER LINE (9) Straight Arrow Connector 4]
+[Rectangle 70] Condition2
+[OTHER LINE (9) Straight Arrow Connector 71]
+===== SLIDE 43 (layout: Title and Content) =====
+[G-PICTURE Picture 5]
+[G-PICTURE Picture 6]
+[G-PICTURE Picture 7]
+[G-PICTURE Picture 8]
+[G-PICTURE Picture 9]
+[G-PICTURE Picture 10]
+[G-PICTURE Picture 11]
+[G-PICTURE Picture 12]
+[G-PICTURE Picture 13]
+[G-PICTURE Picture 14]
+[G-PICTURE Picture 15]
+[G-PICTURE Picture 16]
+[G-PICTURE Picture 17]
+[G-PICTURE Picture 18]
+[G-PICTURE Picture 19]
+[G-PICTURE Picture 20]
+[G:Rectangle 22] x == y
+[G:Rectangle 30] No
+[G:Rectangle 31] print(‘equal’)
+[G:Rectangle 39] Yes
+[G:Rectangle 40] x < y
+[G:Rectangle 42] print(’‘greater’)
+[G:Rectangle 56] No
+[G:Rectangle 57] print(‘less’)
+[G:Rectangle 65] Yes
+[PICTURE Picture 68]
+===== SLIDE 44 (layout: Title and Content) =====
+[Content Placeholder 2] If else within if else
+
+[PICTURE Picture 5]
+===== SLIDE 45 (layout: Two Content) =====
+[Content Placeholder 2] Examples
+Program that checks if a number is positive, and if single digit number.
+If within if:
+
+
+
+[PICTURE Picture 4]
+[Title 1] Nested Conditions
+===== SLIDE 46 (layout: Two Content) =====
+[Content Placeholder 2] Example
+Write a program to accept number from the user, print “play basketball” if number is less than or equal to 15, otherwise print “Don’t play game”. However, if the number is equal to 10,  display “play football”.
+
+
+[PICTURE Picture 3]
+===== SLIDE 47 (layout: Two Content) =====
+[Content Placeholder 2] Write a program to determine the shirt size of a user. 
+The program will read the height and weight of the user.
+Calculate the ratio by dividing the height by the weight.
+ If ratio is greater than 5, check if it is greater than or less than 20.
+   if ratio is greater than 20, print “ Size XXL”
+   if ratio is less than 20, print “Size L”
+If ratio is less than 5, check if it is greater than 3.
+    if ratio greater than 3, print “Size M”
+    otherwise print “Size S”
+[Title 1] Exercise
+===== SLIDE 48 (layout: Two Content) =====
+[Title 1] solution
+[PICTURE Picture 4]
+===== SLIDE 49 (layout: Title and Content) =====
+[Title 1] Exercise
+[Content Placeholder 2] A company needs a tax calculator. 
+The user will enter the following: Employee Name, rate Per Day and Number of days worked. 
+Calculate and display the salary and tax for the employee.
+Salary = rate per day * the number of days. 
+The tax is computed based on the salary. See Tax computation based on salary range as indicated on the table below:
+Salary  | Tax
+1-500 | 5%
+500-1000 | 10%
+More than 1000 | 15%
+===== SLIDE 50 (layout: Title and Content) =====
+[Title 1] Exercises - Practice
+[PICTURE Picture 4]

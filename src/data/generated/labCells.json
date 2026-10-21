@@ -1,0 +1,931 @@
+{
+ "lab-ch3-ii": [
+  {
+   "n": 1,
+   "type": "code",
+   "text": "x = int(input('Number 1 = '))\n\nresult = \"Correct Answer\" if x>100 else \"Wrong Answer\"\n\nprint('The Result is ', result)",
+   "output": "Number 1 = 200\nThe Result is  Correct Answer",
+   "images": []
+  },
+  {
+   "n": 2,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 3,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 4,
+   "type": "code",
+   "text": "What is the output of:\n\nx=1\nprint(x)\nprint(int(x),'a')",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 5,
+   "type": "markdown",
+   "text": "Question:\nWrite a program to read the total number of students in a class and the number of students attending online.\n\nCalculate how many students are attending offline (on campus).\n\nCalculate the percentage of online students.\n\nPrint both results.\nSample output:",
+   "output": "",
+   "images": [
+    "lab-ch3-ii-cell5-1.webp"
+   ]
+  },
+  {
+   "n": 6,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 7,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 8,
+   "type": "code",
+   "text": "# Read the total number of students and online attendees\ntotal_students = int(input(\"Enter the total number of students in the class: \"))\nonline_students = int(input(\"Enter the number of students attending online: \"))\n\n# Calculate the number of students attending offline\noffline_students = total_students - online_students\n\n# Calculate the percentage of online students\n# (Multiplied by 100 to get the percentage value)\nonline_percentage = (online_students / total_students) * 100\n\n# Print both results\nprint(f\"\\nNumber of students attending offline: {offline_students}\")\nprint(f\"Percentage of online students: {online_percentage:.1f}%\")",
+   "output": "Number of students attending offline: 23\nPercentage of online students: 11.5%",
+   "images": []
+  },
+  {
+   "n": 9,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 10,
+   "type": "code",
+   "text": "# E.g. 1:\nAsk the user to enter 'yes' or 'no'. \nIf it is raining or there is no transport,\nthen attend the online class.\nOtherwise, attend an offline class on campus.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 11,
+   "type": "code",
+   "text": "user = input('Enter Yes or No:\\t')\ncase1 = 'raining'\ncase2 = 'no transport'\nif case1 == True or case2 == True:\n    print('Attend the online class!')\nelse:\n    print('Stay on Campus')\nprint('Check your status!!')    ",
+   "output": "Enter Yes or No:\tYes\nStay on Campus\nCheck your status!!",
+   "images": []
+  },
+  {
+   "n": 12,
+   "type": "code",
+   "text": "#user = input('Enter Yes or No:\\t')\ncase1 = input('Case is raining or not raining:\\t')\ncase2 = input('no transport / transport:\\t')\nif case1 == 'raining' and case2 == 'no transport':\n    print('Attend the online class!')\nelse:\n    print('Stay on Campus')\nprint('Check your status!!')    ",
+   "output": "Case is raining or not raining:\training\nno transport / transport:\ttransport\nStay on Campus\nCheck your status!!",
+   "images": []
+  },
+  {
+   "n": 13,
+   "type": "code",
+   "text": "# Alternative Execution\n# Single Line if statement(conditional expression):",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 14,
+   "type": "code",
+   "text": "Question:\nWrite a single-line Python statement that:\nreads two integers from the user, finds the larger number, and prints it to the screen.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 15,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 16,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 17,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 18,
+   "type": "code",
+   "text": "n = int(input('enter number 1'))\nn2 = int(input('enter number 2'))\nresult = n if n>n2 else n2\nprint('The larger no. is ', result)",
+   "output": "The larger no. is  12",
+   "images": []
+  },
+  {
+   "n": 19,
+   "type": "code",
+   "text": "Question:\n\nWrite a single-line statement that reads a student's final score (out of 100)\nand prints \"Pass\" if the score is 50 or higher, or \"Fail\" if it is lower.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 20,
+   "type": "code",
+   "text": "n = int(input('enter number 1'))\n\nresult = 'Pass' if n>=50 else 'Fail'\nprint(result)",
+   "output": "Pass",
+   "images": []
+  },
+  {
+   "n": 21,
+   "type": "code",
+   "text": "# Chained conditions ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 22,
+   "type": "code",
+   "text": "# Example\nNumber type check: ask the user to enter a number.\nIf the number is greater than zero, \nthen display a positive number\nIf the number is less than zero, \nthen display a negative number\nOtherwise, display zero",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 23,
+   "type": "code",
+   "text": "number = int(input('Enter a number = '))\nif number>0:\n    print('a positive number')\nelif number<0:\n    print('a negative number')\nelse:\n    print('Display zero!')\n    ",
+   "output": "Enter a number = 0\nDisplay zero!",
+   "images": []
+  },
+  {
+   "n": 24,
+   "type": "markdown",
+   "text": "Write a Python program:\n\nAsk the student to enter their daily study hours.\n\nCalculate total weekly study hours.\n\nDisplay total weekly study hours.\n\nSample Output:",
+   "output": "",
+   "images": [
+    "lab-ch3-ii-cell24-1.webp",
+    "lab-ch3-ii-cell24-2.webp"
+   ]
+  },
+  {
+   "n": 25,
+   "type": "code",
+   "text": "daily_hours = float(input('Enter Your Daily Hours:\\t'))\ntotal_weekly = daily_hours*7\nif daily_hours >= 35:\n    print('Very Hardworking')\nelif daily_hours >= 20:\n    print('Good')\nelse:\n    print('Needs Improvement')\n\nprint('Total Weekly Hours = ', total_weekly)    \n    ",
+   "output": "Enter Your Daily Hours:\t5.5\nNeeds Improvement\nTotal Weekly Hours =  38.5",
+   "images": []
+  },
+  {
+   "n": 26,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 27,
+   "type": "code",
+   "text": "daily_hours = float(input('Enter Your Daily Hours:\\t'))\nweekly_hours = daily_hours*7\n# Display total weekly study hours\nprint(f\"\\nTotal weekly study hours: {weekly_hours:.1f}\")\n\nif weekly_hours >=35:\n    print('Very Hardworking.')\nelif weekly_hours >=20:\n    print('Good.')\nelse:\n    print('Needs Improvement')\n\nprint('Total weekly Hours = ', weekly_hours)    ",
+   "output": "Total weekly study hours: 38.5\nVery Hardworking.\nTotal weekly Hours =  38.5",
+   "images": []
+  },
+  {
+   "n": 28,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 29,
+   "type": "code",
+   "text": "# E.g. 2:\nA student has a test score.\nRead/ accept the test marks and the number of hours, and display the final marks.\n    \nIf the student studies more hours, they get bonus marks.\n\nIf study hours are greater than or equal to 5, add 10 bonus marks\n\nIf study hours are greater than or equal to 3, add 5 bonus marks\n\nOtherwise, no bonus",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 30,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 31,
+   "type": "code",
+   "text": "# Step 1: Read and accept the inputs from the user\nmarks = float(input(\"Enter the test marks: \"))\nhours = float(input(\"Enter the number of study hours: \"))\n\n# Step 2: Determine the bonus based on study hours\nif hours >= 5:\n    bonus = 10\nelif hours >= 3:\n    bonus = 5\nelse:\n    bonus = 0\n\n\nfinal_marks = marks + bonus\n\nprint(\"The final marks are:\", final_marks)",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 32,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 33,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  }
+ ],
+ "lab-ch3-iii": [
+  {
+   "n": 1,
+   "type": "code",
+   "text": "Question\n\nWrite a Python program for a pizza shop.\n\nThe shop has a special offer:\n\nOffer: Buy 2 pizzas and get 1 free.\n\nAsk the customer to enter:\n\nThe number of pizzas they want\nPrice of one pizza\n\nThe program should calculate the number of free pizzas and then calculate the total amount to pay.\n    \nFormula\nFree pizzas = Number of pizzas ÷ 3\nTotal Cost = (Number of Pizzas − Number of Free Pizzas) × Price\n    ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 2,
+   "type": "markdown",
+   "text": "",
+   "output": "",
+   "images": [
+    "lab-ch3-iii-cell2-1.webp"
+   ]
+  },
+  {
+   "n": 3,
+   "type": "code",
+   "text": "pizzas = int(input(\"Enter number of pizzas: \"))\nprice = float(input(\"Enter price of one pizza: \"))\n\nfree_pizzas = pizzas // 3\ntotal = (pizzas - free_pizzas) * price\n\nprint(\"Total cost:\", total, \"OMR\")",
+   "output": "Total cost: 15.0 OMR",
+   "images": []
+  },
+  {
+   "n": 4,
+   "type": "code",
+   "text": "pizzas = int(input(\"Enter number of pizzas: \"))\nprice = float(input(\"Enter price of one pizza: \"))\n\nfree_pizzas = pizzas / 3\ntotal = (pizzas - free_pizzas) * price\n\nprint(\"Total cost:\", total, \"OMR\")",
+   "output": "Total cost: 4.0 OMR",
+   "images": []
+  },
+  {
+   "n": 5,
+   "type": "code",
+   "text": "Question\n\nWrite a Python program to calculate the total cost of stationery items.\n\nAsk the user to enter the quantity and price of each item:\n\nPencil\nPen\nCalculator\nExtra paper\n\nThen calculate and display the total cost.\n\nTotal Cost = Pencil Cost + Pen Cost + Calculator Cost + Paper Cost\n\nWhere:\n\nPencil Cost = pencil quantity × pencil price\nPen Cost = pen quantity × pen price\nCalculator Cost = calculator quantity × calculator price\nPaper Cost = paper quantity × paper price",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 6,
+   "type": "markdown",
+   "text": "",
+   "output": "",
+   "images": [
+    "lab-ch3-iii-cell6-1.webp"
+   ]
+  },
+  {
+   "n": 7,
+   "type": "code",
+   "text": "pencil_qty = int(input(\"Enter pencil quantity: \"))\npencil_price = float(input(\"Enter pencil price: \"))\n\npen_qty = int(input(\"Enter pen quantity: \"))\npen_price = float(input(\"Enter pen price: \"))\n\ncalculator_qty = int(input(\"Enter calculator quantity: \"))\ncalculator_price = float(input(\"Enter calculator price: \"))\n\npaper_qty = int(input(\"Enter paper quantity: \"))\npaper_price = float(input(\"Enter paper price: \"))\n\npencil_cost = pencil_qty * pencil_price\npen_cost = pen_qty * pen_price\ncalculator_cost = calculator_qty * calculator_price\npaper_cost = paper_qty * paper_price\n\ntotal = pencil_cost + pen_cost + calculator_cost + paper_cost\n\nprint(\"Pencil cost:\", pencil_cost, \"OMR\")\nprint(\"Pen cost:\", pen_cost, \"OMR\")\nprint(\"Calculator cost:\", calculator_cost, \"OMR\")\nprint(\"Paper cost:\", paper_cost, \"OMR\")\nprint(\"Total cost:\", total, \"OMR\")",
+   "output": "Pencil cost: 1.0 OMR\nPen cost: 1.5 OMR\nCalculator cost: 5.0 OMR\nPaper cost: 1.0 OMR\nTotal cost: 8.5 OMR",
+   "images": []
+  },
+  {
+   "n": 8,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 9,
+   "type": "code",
+   "text": "Class Exercise: Fruit Shop\n\nQuestion\n\nWrite a Python program for a fruit shop. The program should ask the customer to enter:\n\nThe fruit name\nThe quantity in kilograms\n\nThe shop sells mango, banana, and watermelon.\n\nThe shop has three fruits with different prices:\n\nMango - 2.000 OMR per kg\nBanana - 1.000 OMR per kg\nWatermelon - 0.500 OMR per kg    \n\nCondition\t                                 Output\nIf the fruit is mango\t                Total cost: 6.0 OMR\nIf the fruit is banana\t                Total cost: 3.0 OMR\nIf the fruit is watermelon\t            Total cost: 1.5 OMR\nIf the fruit is none of these\t        Fruit not available\n\n\nThe program should calculate and display the total cost. Formula to calculate total = total = quantity * fruite price\nIf the customer enters another fruit, display \"Fruit not available\".",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 10,
+   "type": "code",
+   "text": "fruit = input(\"Enter fruit: \")\nquantity = float(input(\"Enter quantity in kg: \"))\n\nif fruit == \"mango\":\n    total = quantity * 2.000\n    print(\"Total cost:\", total, \"OMR\")\n\nelif fruit == \"banana\":\n    total = quantity * 1.000\n    print(\"Total cost:\", total, \"OMR\")\n\nelif fruit == \"watermelon\":\n    total = quantity * 0.500\n    print(\"Total cost:\", total, \"OMR\")\n\nelse:\n    print(\"Fruit not available\")",
+   "output": "Total cost: 3.0 OMR",
+   "images": []
+  },
+  {
+   "n": 11,
+   "type": "code",
+   "text": "Class Exercise: Shopping Discount\nQuestion\n\nWrite a Python program for a supermarket that asks the customer to enter:\n\n1. The customer's name\n2. The total purchase amount in OMR\n3. Whether the customer has a membership (yes or no)\n\n\nThe supermarket gives a 2% discount when:\n\nThe purchase amount is more than 50 OMR, AND the customer is a member.    \n\nIf both conditions are satisfied, calculate the 2% discount and the final amount.\n\nOtherwise, display the original purchase amount.\n\nCondition\t                                                                   Output\nPurchase is more than 50 OMR AND customer is a member\t          Calculate the discount and display the customer name, the total amount, and the discount.\nPurchase is 50 OMR or less OR customer is not a member\t          Display the customer name, the total amount, and no discount\nPurchase is more than 50 OMR, but the customer is not a member\t      Display the customer name, the total amount, and no discount\n\n    \nformula:\n    \ndiscount = amount * 2%  ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 12,
+   "type": "code",
+   "text": "name = input(\"Enter customer name: \")\namount = float(input(\"Enter purchase amount: \"))\nmember = input(\"Are you a member? (yes/no): \")\n\nif amount > 50 and member == \"yes\":\n    discount = amount * 0.02\n    final_amount = amount - discount\n\n    print(\"Customer:\", name)\n    print(\"Discount:\", discount, \"OMR\")\n    print(\"Final amount:\", final_amount, \"OMR\")\n\nelse:\n    print(\"Customer:\", name)\n    print(\"No discount\")\n    print(\"Final amount:\", amount, \"OMR\")",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 13,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 14,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 15,
+   "type": "code",
+   "text": "# Nested: if inside another if\n# Use this when the second condition should be checked only if the first condition is True.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 16,
+   "type": "code",
+   "text": "x = 1\ny = 2\n\nif x<y:\n    print(x)\n    if y>x:\n        print(y)",
+   "output": "1\n2",
+   "images": []
+  },
+  {
+   "n": 17,
+   "type": "code",
+   "text": "x = 1\ny = 2\n\nif x>y:\n    print(x)\n    if y>x:\n        print(y)",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 18,
+   "type": "code",
+   "text": "Question 1:\n\nWrite a Python program to read a student's attendance percentage and mark.\n\nFirst, check whether the student's attendance is 75% or above.\n\nOnly if the attendance is 75% or above, check whether the student's mark is 60 or above.\n\nIf both conditions are satisfied, display \"Student Passed\".\n\n***Important: If attendance is below 75%, do not check the mark.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 19,
+   "type": "code",
+   "text": "attendance = float(input('Enter Attendance Percentage:\\t'))\nmarks = float(input('Enter Marks:\\t'))\n\nif attendance >= 75:\n    if marks>=60:\n        print('Student Passed')",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 20,
+   "type": "code",
+   "text": "Question 2:\n\nWrite a Python program to read a student's year of study and GPA.\n\nFirst, check whether the student is in Year 3.\nOnly if the student is in Year 3, check whether the GPA is 3.0 or above.\nIf both conditions are satisfied, display \"Eligible for Graduation Review\".",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 21,
+   "type": "code",
+   "text": "study = float(input('Enter Study Year:\\t'))\ngpa = float(input('Enter GPA:\\t'))\nif study == 3:\n    if gpa >=3:\n        print('Eligible for Graduation Review')",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 22,
+   "type": "code",
+   "text": "Question 3:\n\nWrite a Python program to read the number of times a student was late and the number of classes they missed.\n\nIf the student was late 3 or more times, check whether they missed any class.\nIf they missed a class, display \"Attendance Warning\".\nIf the student was late fewer than 3 times, no message is required.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 23,
+   "type": "code",
+   "text": "late = int(input('Enter Number of Late: \\t'))\nmissed_classes = int(input('Missed Classes:\\t'))\n\nif late >= 3:\n    if missed_classes > 0:\n        print('Attendance Warning')\n        ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 24,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 25,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 26,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 27,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 28,
+   "type": "code",
+   "text": "# Nested if–else\n# Need different actions for all possible outcomes\n\nif condition1:\n    if condition2:\n        statements1\n    else:\n        statements2\nelse:\n    statements3",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 29,
+   "type": "code",
+   "text": "Question 1:\n\nWrite a Python program to read a student's mark.\n\nIf the mark is 60 or above, check whether it is 80 or above.\nIf it is 80 or above, display \"Excellent\".\nOtherwise, display \"Passed\".\nIf the mark is below 50, display \"Failed\".",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 30,
+   "type": "code",
+   "text": "marks = float(input('Enter Marks:\\t'))\n\nif marks >= 60:\n    if marks >= 80:\n        print('Excellent')\n    else:\n        print('Passed')\n        \nelse:\n    print('Failed')",
+   "output": "Failed",
+   "images": []
+  },
+  {
+   "n": 31,
+   "type": "code",
+   "text": "Question 2:\n\nWrite a Python program to read a student's number of late arrivals, number of absences, and whether the student missed the first class.\n\nUse the following rules:\n\nIf the student was late 3 or more times:\nIf the student also has an absence, display \"Serious Attendance Issue\".\nOtherwise, display \"Frequent Late Arrival\".\nIf the student was late fewer than 3 times, display \"Attendance is Acceptable\".",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 32,
+   "type": "code",
+   "text": "late = int(input('Enter Number of Late: \\t'))\nmissed_classes = int(input('Missed Classes:\\t'))\n\nif late >= 3:\n    if missed_classes > 0:\n        print('Serious Attendance Issue')\n    else:\n        print('Frequent Late Arrival')\nelse:\n    print('Attendance is Acceptable')\n        ",
+   "output": "Attendance is Acceptable",
+   "images": []
+  }
+ ],
+ "lab-ch3-iiii": [
+  {
+   "n": 1,
+   "type": "code",
+   "text": "Identify the datatypes: \n1.\t456738 \n2.\t10.3\n3.\t2.1\n4.\t1.0\n5.\t3J\n6.\t4 + 5j\n7.\ttrue \n8.\tFalse \n9.\t“Hello”\n10.\t “10.12”",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 2,
+   "type": "code",
+   "text": "Identify the correct declaration of a variable \n1.\tA -value\n2.\ta- value\n3.\txyz- value\n4.\tname-value\n5.\thello -value\n6.\ttrue-value\n7.\tfalse- value\n8.\tFalse-key word\n9.\t@123\n10. _value-1\n11. _1 ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 3,
+   "type": "code",
+   "text": "Find the output \nA= “Hi”\nB=3\nC=A*B\nPrint(C)",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 4,
+   "type": "code",
+   "text": "A= “Hi”\nB=3\nC=A+B\nPrint(C)",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 5,
+   "type": "code",
+   "text": "a=20  \nb=4\nc=100\nd=2\ne=a+(b*c)/d\ne",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 6,
+   "type": "code",
+   "text": "a=2  \nb=4\nc=\"UTAS\"\nd=2\ne=(d*c)\nf=(a+d)\n\nprint(e)\nprint (f)",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 7,
+   "type": "code",
+   "text": "a=2  \nb=4\nc=\"UTAS\"\nd=2\ne=(d*c)\nf=(a+d)\n\nprint(e)\nprint (f)",
+   "output": "UTASUTAS\n4",
+   "images": []
+  },
+  {
+   "n": 8,
+   "type": "code",
+   "text": "Write a program to read the marks from the user: Mark1, Mark2. Calculate the total marks and the average. Print the average and total marks. ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 9,
+   "type": "code",
+   "text": "Q3:",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 10,
+   "type": "code",
+   "text": "num1 = float(input(\"Enter first number: \"))\nnum2 = float(input(\"Enter second number: \"))\nnum3 = float(input(\"Enter third number: \"))\n\nif num1 >= num2 and num1 >= num3:\n    largest = num1\n\nelif num2 >= num1 and num2 >= num3:\n    largest = num2\n\nelse:\n    largest = num3\n\nprint(\"Largest number:\", largest)",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 11,
+   "type": "code",
+   "text": "Q4",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 12,
+   "type": "code",
+   "text": "name = input('Enter name ')\nid = input('Enter ID ')\nquiz = float(input('Quiz marks '))\nmid = float(input('MID marks '))\nfinal = float(input('Final marks '))\n\ntotal = quiz + mid + final\n\nif total >= 90:\n    Grade = 'A'\nelif total >= 80 and total <=89:\n    Grade = 'B'\nelif total >=70 and total <=79:\n    Grade = 'C'\nelif total >= 60 and total <= 69:\n    Grade = 'D'\nelif total<60:\n    Grade = 'F'\n\nprint('Total marks = ', total)\nprint('Your grade = ', Grade)\n    \n    ",
+   "output": "Total marks =  63.0\nYour grade =  D",
+   "images": []
+  },
+  {
+   "n": 13,
+   "type": "code",
+   "text": "Q5",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 14,
+   "type": "code",
+   "text": "num1 = float(input('Num 1:\\t '))\nnum2 = float(input('Num 2:\\t '))\nChoice = int(input('Enter your choice:\\t '))\n\nif Choice == 1:\n    result = num1 + num2\n    print('Result ', result)\n\nelif Choice == 2:\n    result = num1 - num2\n    print('Result ', result) \n\nelif Choice == 3:\n    result = num1 * num2\n    print('Result ', result)\n\nelif Choice == 4:\n    result = num1 % num2\n    print('Result ', result)\n\nelif Choice == 5:\n    result = num1 / num2\n    print('Result ', result)\n\nelse:\n    print('Error')",
+   "output": "Result  1.0",
+   "images": []
+  },
+  {
+   "n": 15,
+   "type": "code",
+   "text": "# Nested Conditions",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 16,
+   "type": "code",
+   "text": "Example\nWrite a Python program to read a student’s attendance percentage and mark.\n\nIf attendance is 75% or above, check the mark.\nIf the mark is 50 or above, print “Passed”.\nIf attendance is below 75%, print “Not Eligible”.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 17,
+   "type": "code",
+   "text": "attendance = float(input(\"Enter attendance: \"))\nmark = float(input(\"Enter mark: \"))\n\nif attendance >= 75:\n    if mark >= 50:\n        print(\"Passed\")\nelse:\n    print(\"Not Eligible\")",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 18,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 19,
+   "type": "code",
+   "text": "Example\n\nWrite a Python program to read the purchase amount and membership status.\n\nIf the purchase amount is more than 50 OMR, check whether the customer is a member.\nIf the customer is a member, calculate a 2% discount.\nIf the customer is not a member, print “No discount”.\nIf the purchase is 50 OMR or less, print “Minimum purchase not reached”.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 20,
+   "type": "code",
+   "text": "amount = float(input(\"Enter purchase amount: \"))\nmember = input(\"Are you a member? \")\n\nif amount > 50:\n    if member == \"yes\":\n        discount = amount * 0.02\n        print(\"Discount:\", discount)\n    else:\n        print(\"No discount\")\nelse:\n    print(\"Minimum purchase not reached\")",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 21,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 22,
+   "type": "code",
+   "text": "Example\nWrite a Python program to read the number of pizzas ordered.\n\nIf the customer orders 3 or more pizzas, check whether they ordered 6 or more.\nIf they ordered 6 or more, print “Large Order”.\nOtherwise, print “Regular Order”.\nIf they order fewer than 3 pizzas, print “Small Order”.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 23,
+   "type": "code",
+   "text": "pizzas = int(input(\"Enter number of pizzas: \"))\n\nif pizzas >= 3:\n    if pizzas >= 6:\n        print(\"Large Order\")\n    else:\n        print(\"Regular Order\")\nelse:\n    print(\"Small Order\")",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 24,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 25,
+   "type": "code",
+   "text": "Example\nWrite a Python program to read a student’s attendance and completed assignments.\n\nIf attendance is 75% or above, check the number of completed assignments.\nIf the student completed 8 or more assignments, print “Eligible for Exam”.\nOtherwise, print “Complete More Assignments”.\nIf attendance is below 75%, print “Attendance Requirement Not Met”.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 26,
+   "type": "code",
+   "text": "attendance = float(input(\"Enter attendance: \"))\nassignments = int(input(\"Enter completed assignments: \"))\n\nif attendance >= 75:\n    if assignments >= 8:\n        print(\"Eligible for Exam\")\n    else:\n        print(\"Complete More Assignments\")\nelse:\n    print(\"Attendance Requirement Not Met\")",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 27,
+   "type": "code",
+   "text": "A company needs a tax calculator. \nThe user will enter the following: Employee Name, rate Per Day and Number of days worked. \nCalculate and display the salary and tax for the employee.\nSalary = rate per day * the number of days. \nThe tax is computed based on the salary. See Tax computation based on salary range as indicated on the table below:\n\nSalary\t                   Tax\n1-500\t                    5%\n500-1000\t                10%\nmore than1000\t            15%",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 28,
+   "type": "code",
+   "text": "name = input(\"Enter employee name: \")\nrate = float(input(\"Enter rate per day: \"))\ndays = int(input(\"Enter number of days worked: \"))\n\nsalary = rate * days\n\nif salary <= 500:\n    tax = salary * 0.05\nelse:\n    if salary <= 1000:\n        tax = salary * 0.10\n    else:\n        tax = salary * 0.15\n\nprint(\"Employee name:\", name)\nprint(\"Salary:\", salary)\nprint(\"Tax:\", tax)",
+   "output": "Employee name: Ali\nSalary: 4000.0\nTax: 600.0",
+   "images": []
+  }
+ ],
+ "lab-ch4-iiii": [
+  {
+   "n": 1,
+   "type": "code",
+   "text": "A university wants to decide whether to conduct physical classes after three consecutive days of rain.\n\nWrite a Python program that asks the user to enter the rainfall recorded on each day (in mm)\nand then calculates the average rainfall and total rainfall.\n\n    The program should make a decision based on the following rules:\n\n1. If the average rainfall is 30 mm or more, physical classes are canceled.\n\n2. Otherwise, if the average rainfall is 20 mm or more, or the rainfall on any single day is 40 mm or more, \ndisplay \"Weather conditions require further assessment.\"\n3. Otherwise, if the total rainfall over the three days is less than 15 mm, \ndisplay \"Rainfall has been low over the three days.\"     \n4. Otherwise, display \"Physical classes can proceed.\"",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 2,
+   "type": "code",
+   "text": "day1 = float(input('Enter the rainfall for day1 (in mm): '))\nday2 = float(input('Enter the rainfall for day2 (in mm): '))\n\nday3 = float(input('Enter the rainfall for day3 (in mm): '))\n\ntotal = day1+day2+day3\n\navg = total/3\n\nprint('Total = ', total)\nprint('Average = ', avg)\n\nif avg >= 30:\n    print('physical classes are canceled')\n\nelif avg >= 20 or day1>=40 or day2>=40 or day3>=40:\n    print('Weather conditions require further assessment.')\n    \nelif total <15:\n    print('Rainfall has been low over the three days.')\n\nelse:\n    print('physical classes can proceed')",
+   "output": "Total =  13.0\nAverage =  4.333333333333333\nRainfall has been low over the three days.",
+   "images": []
+  },
+  {
+   "n": 3,
+   "type": "code",
+   "text": "# Uses a while loop to input rainfall for three days.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 4,
+   "type": "code",
+   "text": "#day1 = float(input('Enter the rainfall for day1 (in mm): '))\n#day2 = float(input('Enter the rainfall for day2 (in mm): '))\n\n#day3 = float(input('Enter the rainfall for day3 (in mm): '))\n\ntotal = 0\ncount = 0\nwhile count<3:\n    days = float(input('Enter the rainfall for 3 days (in mm): '))\n    total = total+days\n    avg = total/days   \n\n    count+=1\nprint('Total = ', total)\nprint('Average = ', avg)      \n\nif avg >= 30:\n    print('physical classes are canceled')\n\nelif avg >= 20 or days>=40:\n    print('Weather conditions require further assessment.')\n    \nelif total <15:\n    print('Rainfall has been low over the three days.')\n\nelse:\n    print('physical classes can proceed')\n\n ",
+   "output": "Total =  120.0\nAverage =  3.0\nWeather conditions require further assessment.",
+   "images": []
+  },
+  {
+   "n": 5,
+   "type": "code",
+   "text": "#day1 = float(input('Enter the rainfall for day1 (in mm): '))\n#day2 = float(input('Enter the rainfall for day2 (in mm): '))\n\n#day3 = float(input('Enter the rainfall for day3 (in mm): '))\n\ntotal = 0\n#count = 0\nfor i in range(3):\n    days = float(input('Enter the rainfall for 3 days (in mm): '))\n    total = total+days\n    avg = total/days   \n\n    #count+=1\nprint('Total = ', total)\nprint('Average = ', avg)      \n\nif avg >= 30:\n    print('physical classes are canceled')\n\nelif avg >= 20 or day1>=40 or day2>=40 or day3>=40:\n    print('Weather conditions require further assessment.')\n    \nelif total <15:\n    print('Rainfall has been low over the three days.')\n\nelse:\n    print('physical classes can proceed')\n\n ",
+   "output": "Total =  15.0\nAverage =  3.0\nphysical classes can proceed",
+   "images": []
+  },
+  {
+   "n": 6,
+   "type": "code",
+   "text": "# if rainfall reaches 50 mm or more on any day, display \"Heavy rainfall detected. Stop data collection.\" and exit the loop using break.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 7,
+   "type": "code",
+   "text": "# day1 = float(input('Enter the rainfall for day1 (in mm): '))\n#day2 = float(input('Enter the rainfall for day2 (in mm): '))\n\n#day3 = float(input('Enter the rainfall for day3 (in mm): '))\n\ntotal = 0\n#count = 0\nfor i in range(3):\n    days = float(input('Enter the rainfall for 3 days (in mm): '))\n    total = total+days\n    avg = total/days  \n    if total>=50:\n        print('Heavy rainfall detected. Stop data collection')\n        break\n\n    #count+=1\nprint('Total = ', total)\nprint('Average = ', avg)  \n\n\n\nif avg >= 30:\n    print('physical classes are canceled')\n\nelif avg >= 20 or day1>=40 or day2>=40 or day3>=40:\n    print('Weather conditions require further assessment.')\n    \nelif total <15:\n    print('Rainfall has been low over the three days.')\n\nelse:\n    print('physical classes can proceed')\n\n ",
+   "output": "Total =  15.0\nAverage =  3.0\nphysical classes can proceed",
+   "images": []
+  },
+  {
+   "n": 8,
+   "type": "code",
+   "text": "# You can use continue to skip processing for a day when the rainfall is negative or invalid and move to the next iteration of the while loop.\n# For example, the program below asks the user to re-enter rainfall if a negative value is entered.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 9,
+   "type": "code",
+   "text": "# day1 = float(input('Enter the rainfall for day1 (in mm): '))\n#day2 = float(input('Enter the rainfall for day2 (in mm): '))\n\n#day3 = float(input('Enter the rainfall for day3 (in mm): '))\n\ntotal = 0\n#count = 0\nfor i in range(3):\n    days = float(input('Enter the rainfall for 3 days (in mm): '))\n    total = total+days\n    avg = total/days  \n    if total<0:\n        print('Invalid rainfall. Please enter a non-negative value.')\n        continue\n    if total>0:\n        print('Heavy rainfall detected. Stop data collection.')\n        break\n\n    #count+=1\nprint('Total = ', total)\nprint('Average = ', avg)  \n\n\n\nif avg >= 30:\n    print('physical classes are canceled')\n\nelif avg >= 20 or day1>=40 or day2>=40 or day3>=40:\n    print('Weather conditions require further assessment.')\n    \nelif total <15:\n    print('Rainfall has been low over the three days.')\n\nelse:\n    print('physical classes can proceed')\n\n ",
+   "output": "Invalid rainfall. Please enter a non-negative value.\n\n\nHeavy rainfall detected. Stop data collection.\nTotal =  49.0\nAverage =  0.98\nphysical classes can proceed",
+   "images": []
+  },
+  {
+   "n": 10,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 11,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 12,
+   "type": "code",
+   "text": "Write a Python program using a while loop to help students track their Python practice hours over seven days.\n\n     - Accept the number of hours a student practices Python each day.\n     - Calculate the total practice hours.\n     - Display the total practice hours.\n     - If the total hours are 10 or more, display \"Good practice!\"; otherwise, display \"Need more practice!\".\n\n    \nThen convert the program to use a for loop.     ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 13,
+   "type": "code",
+   "text": "total_hours = 0\ncount = 0\nwhile count < 7:\n    num_hours = float(input('Enter daily practice hours: '))\n    total_hours = total_hours + num_hours\n    count+=1\n\nif total_hours>=10:\n    print('Good Practice!')\nelse:\n    print('Need more Practice!')\nprint('Total hours = ', total_hours)    ",
+   "output": "Good Practice!\nTotal hours =  14.0",
+   "images": []
+  },
+  {
+   "n": 14,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 15,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 16,
+   "type": "code",
+   "text": "total_hours = 0\ncount = 0\nfor count in range(7):\n    num_hours = float(input('Enter daily practice hours: '))\n    total_hours = total_hours + num_hours\n    \nif total_hours>=10:\n    print('Good Practice!')\nelse:\n    print('Need more Practice!')\nprint('Total hours = ', total_hours)    ",
+   "output": "Good Practice!\nTotal hours =  14.0",
+   "images": []
+  },
+  {
+   "n": 17,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 18,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 19,
+   "type": "code",
+   "text": "# break statement",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 20,
+   "type": "code",
+   "text": "while True:\n    line = input('Type done ')\n    if line == 'true':\n        break\n    print(line)\n\nprint('Done')",
+   "output": "a\n\n\nDone",
+   "images": []
+  },
+  {
+   "n": 21,
+   "type": "code",
+   "text": " ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 22,
+   "type": "code",
+   "text": "Write a Python program using a while loop to help students track their Python practice hours over seven days.\n\n     - Accept the number of hours a student practices Python each day.\n     - Continue entering hours until the user enters -1.\n     - Calculate the total practice hours.\n     - Display the total practice hours.\n     - If the total hours are 10 or more, display \"Good practice!\"; otherwise, display \"Need more practice!\".\n\n    \nThen convert the program to use a for loop.     ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 23,
+   "type": "code",
+   "text": "total_hours = 0\ncount = 0\nwhile count < 7:\n    num_hours = float(input('Enter daily practice hours: '))\n        \n    if num_hours==-1:\n        break\n        print('Stop entering practice hours!')\n    total_hours = total_hours + num_hours\n    count+=1\nprint('Total hours = ', total_hours)\n\nif total_hours>=10:\n    print('Good Practice!')\nelse:    \n    print('Need more Practice!')\n    ",
+   "output": "Total hours =  0\nNeed more Practice!",
+   "images": []
+  },
+  {
+   "n": 24,
+   "type": "code",
+   "text": "i = 0\nwhile i < 3:\n    user = input('Enter Values ')\n\n    if user == 'Ali':\n        print('Yes')\n        break\n\n    print(i)\n    i += 1",
+   "output": "0\n\n\n1\n\n\nYes",
+   "images": []
+  }
+ ],
+ "lab-ch2-practice-ii": [
+  {
+   "n": 1,
+   "type": "code",
+   "text": "# Store a student’s age as 20, name as Ali, and GPA as 3.5 at the same time.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 2,
+   "type": "code",
+   "text": "# provide the output of the following program:\n\nprint(\"hello my\\\n students.\")",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 3,
+   "type": "code",
+   "text": "print(\"hello my\n students.\")",
+   "output": "SyntaxError: EOL while scanning string literal (2931476342.py, line 1)",
+   "images": []
+  },
+  {
+   "n": 4,
+   "type": "code",
+   "text": "# provide the output of the following program:\npresent = True\nprint(not present)",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 5,
+   "type": "code",
+   "text": "Write a python program for the following:\n\nA student can join the school trip if:\n\nAge is 18 or more\n\nAND has parent permission",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 6,
+   "type": "code",
+   "text": "Write a python program for the following:\n\nA student can enter the library if:\n\nHas an ID card\n\nOR the teacher allows",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 7,
+   "type": "code",
+   "text": "Write a python program for the following:\n    \nid_card = False\nteacher_allowed = True\n\nprint(id_card or teacher_allowed)",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 8,
+   "type": "code",
+   "text": "# Expression = something Python calculates",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 9,
+   "type": "code",
+   "text": "10 - 3 + 2\n5 + 4 - 2\n10 + 8 % 3 * 2\n3 + 4 * 2**2 - (5 + 1)\n20 / 5 * 2 - 3\n3/7-(10 - 4) * 3 + 6\n2 + 3**2 * 2",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 10,
+   "type": "code",
+   "text": "Example: Attendance Check\n\nScenario: The teacher wants to know if a student is present today.\n    Read and accept the student's name \n    and whether the student is present or not present.\n        Display the statement: Ali is present today. ",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 11,
+   "type": "code",
+   "text": "Name = input(\"Enter your name:\\t\")\nAtt = input(\"Present or not present (Yes or No)\\t\")\nprint(Name + \" is \" + Att + \" today.\")",
+   "output": "Enter your name:\tAli\nPresent or not present (Yes or No)\tPresent\nAli is Present today.",
+   "images": []
+  },
+  {
+   "n": 12,
+   "type": "code",
+   "text": "Example: Marks Entry\n\nScenario: The teacher wants to record a student's test marks.\nRead name and marks and display the output: Student Sara scored 90 marks in the test.",
+   "output": "",
+   "images": []
+  },
+  {
+   "n": 13,
+   "type": "code",
+   "text": "",
+   "output": "",
+   "images": []
+  }
+ ]
+}
