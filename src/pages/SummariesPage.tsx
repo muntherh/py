@@ -10,6 +10,7 @@ import { CONCEPTS } from "../data/concepts";
 import { TOPICS } from "../data/sources";
 import type { TopicId } from "../data/types";
 import { lessonForConcept, lessonsForTopic } from "../lib/analytics";
+import { isFramed } from "../lib/env";
 
 export function SummariesPage() {
   const [topic, setTopic] = useState<TopicId>("t2");
@@ -23,7 +24,7 @@ export function SummariesPage() {
         title="Revision sheets"
         description="A complete summary of every concept in the permitted material, with the slides it comes from. Use it for quick revision before an exam."
         actions={
-          <button className="btn-secondary" onClick={() => window.print()}>
+          !isFramed && <button className="btn-secondary" onClick={() => window.print()}>
             <Printer size={15} /> Print
           </button>
         }

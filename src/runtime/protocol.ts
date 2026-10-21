@@ -24,7 +24,7 @@ export interface RunRequest {
 }
 
 export type ToWorker =
-  | { type: "init"; indexURL: string; harnessSource: string }
+  | { type: "init"; indexURL: string; stdLibURL: string; harnessSource: string }
   | RunRequest
   | { type: "input-response"; id: number; value: string | null }
   | { type: "reset-notebook" };

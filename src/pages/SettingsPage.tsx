@@ -8,6 +8,7 @@ import { useExams } from "../store/examStore";
 import { useLab } from "../store/labStore";
 import { pythonRunner } from "../runtime/PythonRunner";
 import { RuntimeBadge } from "../components/code/RuntimeBadge";
+import { isFramed } from "../lib/env";
 
 export function SettingsPage() {
   const s = useSettings();
@@ -92,9 +93,11 @@ export function SettingsPage() {
           Your data
         </h2>
         <div className="flex flex-wrap gap-2">
-          <button className="btn-secondary" onClick={exportData}>
-            <Download size={15} /> Export progress (JSON)
-          </button>
+          {!isFramed && (
+            <button className="btn-secondary" onClick={exportData}>
+              <Download size={15} /> Export progress (JSON)
+            </button>
+          )}
           <button className="btn-secondary" onClick={() => setConfirm("progress")}>
             <Trash2 size={15} /> Reset learning progress
           </button>

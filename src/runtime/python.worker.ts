@@ -33,12 +33,12 @@ function post(msg: FromWorker) {
   self.postMessage(msg);
 }
 
-async function init(indexURL: string, harnessSource: string) {
+async function init(indexURL: string, stdLibURL: string, harnessSource: string) {
   try {
     const mod = (await import(/* @vite-ignore */ `${indexURL}pyodide.mjs`)) as {
       loadPyodide: (opts: Record<string, unknown>) => Promise<PyodideLike>;
     };
-    pyodide = await mod.loadPyodide({ indexURL });
+    pyodide = await mod.loadPyodide({ indexURL, stdLibURL });
     pyodide.FS.writeFile("/home/pyodide/pml_harness.py", harnessSource);
     harness = pyodide.pyimport("pml_harness");
     harness.configure(
@@ -60,7 +60,7 @@ async function init(indexURL: string, harnessSource: string) {
 self.onmessage = async (event: MessageEvent<ToWorker>) => {
   const msg = event.data;
   if (msg.type === "init") {
-    await init(msg.indexURL, msg.harnessSource);
+    await init(msg.indexURL, msg.stdLibURL, msg.harnessSource);
     return;
   }
   if (msg.type === "input-response") {

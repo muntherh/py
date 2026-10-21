@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Lightbulb, Lock } from "lucide-react";
 import { RichText } from "../ui/RichText";
 
@@ -18,6 +19,7 @@ export function HintPanel({
   onReveal: (level: number) => void;
   submitted: boolean;
 }) {
+  const [confirmFull, setConfirmFull] = useState(false);
   return (
     <div className="space-y-2" aria-label="Hints">
       <p className="text-xs text-subtle">Hints are prepared, source-grounded guidance written for this exercise — not live AI.</p>
@@ -41,16 +43,26 @@ export function HintPanel({
               <button
                 className="flex w-full items-center justify-between gap-2 px-3 py-2.5 text-left text-sm text-muted hover:text-ink disabled:cursor-not-allowed disabled:opacity-60"
                 disabled={!canOpen}
-                onClick={() => {
-                  if (gated && !window.confirm("The complete explanation shows how to solve the exercise. Reveal it before submitting?")) return;
-                  onReveal(level);
-                }}
+                onClick={() => (gated ? setConfirmFull(true) : onReveal(level))}
               >
                 <span className="flex items-center gap-2">
                   <Lock size={14} /> Level {level} · {LEVELS[i]}
                 </span>
                 <span className="text-xs">{canOpen ? (gated ? "Reveal (before submitting)" : "Reveal") : "Unlock previous hint first"}</span>
               </button>
+            )}
+            {level === 4 && confirmFull && !open && (
+              <div className="space-y-2 border-t border-line p-3 text-sm" role="alert">
+                <p className="text-muted">The complete explanation shows how to solve the exercise. Reveal it before submitting?</p>
+                <div className="flex gap-2">
+                  <button className="btn-primary btn-sm" onClick={() => (setConfirmFull(false), onReveal(4))}>
+                    Yes, show it
+                  </button>
+                  <button className="btn-secondary btn-sm" onClick={() => setConfirmFull(false)}>
+                    Not yet
+                  </button>
+                </div>
+              </div>
             )}
           </div>
         );

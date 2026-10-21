@@ -128,7 +128,10 @@ export class PythonRunner {
           reject(new Error(this._initError));
         }
       });
-      this.post({ type: "init", indexURL: resolveIndexURL(), harnessSource });
+      const indexURL = resolveIndexURL();
+      // Hosts that refuse .zip files can ship the same archive under another name (VITE_PYODIDE_STDLIB).
+      const stdLibURL = indexURL + (import.meta.env.VITE_PYODIDE_STDLIB || "python_stdlib.zip");
+      this.post({ type: "init", indexURL, stdLibURL, harnessSource });
     });
     return this.readyPromise;
   }
