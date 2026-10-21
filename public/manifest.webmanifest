@@ -1,0 +1,14 @@
+{
+  "name": "Python Mastery Lab",
+  "short_name": "Python Lab",
+  "description": "Lessons, a real Python lab, practice questions and timed exams for Introduction to Programming.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f4fd",
+  "theme_color": "#6b4ffa",
+  "icons": [
+    { "src": "brand/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "brand/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

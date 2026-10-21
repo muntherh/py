@@ -3,7 +3,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import { AppLayout } from "./components/layout/AppLayout";
 import { ExamWatcher } from "./components/layout/ExamWatcher";
 import { useHydrated } from "./lib/useHydrated";
-import { useSettings } from "./store/settingsStore";
+import { useResolvedTheme } from "./lib/useResolvedTheme";
 import { pythonRunner } from "./runtime/PythonRunner";
 import { DashboardPage } from "./pages/DashboardPage";
 import { LearnPage } from "./pages/LearnPage";
@@ -24,10 +24,16 @@ import { NotFoundPage } from "./pages/NotFoundPage";
 
 export function App() {
   const hydrated = useHydrated();
-  const theme = useSettings((s) => s.theme);
+  const theme = useResolvedTheme();
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
+    // Remembered so index.html can apply it before the first paint (no colour flash).
+    try {
+      localStorage.setItem("pml-theme", theme);
+    } catch {
+      /* storage unavailable */
+    }
   }, [theme]);
 
   useEffect(() => {

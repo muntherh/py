@@ -98,7 +98,7 @@ function ExamSession({ attempt, exam, now }: { attempt: ExamAttempt; exam: ExamD
 
   return (
     <div className="space-y-4">
-      <div className="sticky top-0 z-20 -mx-4 flex flex-wrap items-center gap-3 border-b border-line bg-bg/90 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+      <div className="sticky top-[49px] z-20 -mx-4 flex flex-wrap items-center gap-3 border-b border-line bg-bg/90 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 lg:top-0 lg:-mx-10 lg:px-10">
         <div className="min-w-0 flex-1">
           <p className="label text-primary-text">Exam {exam.number}</p>
           <p className="truncate font-semibold">{exam.title}</p>

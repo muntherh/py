@@ -6,7 +6,7 @@ const ROUTES = ["/", "/learn/lesson-t2-values-types", "/lab?tab=exercises", "/pr
 for (const theme of ["dark", "light"] as const) {
   test(`no serious accessibility violations (${theme} theme)`, async ({ page }) => {
     await page.goto("/#/settings");
-    if (theme === "light") await page.getByText("Light", { exact: true }).click();
+    await page.getByText(theme === "light" ? "Light" : "Dark", { exact: true }).click();
     for (const r of ROUTES) {
       await page.goto(`/#${r}`);
       await page.locator("main h1").first().waitFor();

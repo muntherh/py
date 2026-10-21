@@ -31,10 +31,16 @@ export function ExamsPage() {
           const { items, points } = examTotals(exam);
           return (
             <article key={exam.id} className="card flex flex-col gap-4 p-5" data-testid={`exam-card-${exam.number}`}>
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="label text-primary-text">Exam {exam.number}</p>
-                  <h2 className="text-lg font-semibold">{exam.title}</h2>
+              <div className="flex items-start gap-3">
+                <span
+                  className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl font-display text-xl font-bold ${exam.difficulty === "easy" ? "bg-success-soft text-success-text" : exam.difficulty === "medium" ? "bg-warning-soft text-warning-text" : "bg-danger-soft text-danger-text"}`}
+                  aria-hidden
+                >
+                  {exam.number}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs font-semibold text-subtle">Exam {exam.number}</p>
+                  <h2 className="text-lg leading-snug font-semibold">{exam.title}</h2>
                 </div>
                 <DifficultyChip difficulty={exam.difficulty} />
               </div>

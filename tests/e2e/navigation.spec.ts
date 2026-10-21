@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import { collectErrors } from "./helpers";
 
 const PAGES: [string, string][] = [
-  ["Dashboard", "Welcome to Python Mastery Lab"],
+  ["Dashboard", "Learn it, run it, then test yourself."],
   ["Learn", "Lessons"],
   ["Topic Summaries", "Revision sheets"],
   ["Python Coding Lab", "Write and run real Python"],

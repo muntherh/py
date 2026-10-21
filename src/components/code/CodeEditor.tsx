@@ -6,6 +6,7 @@ import { Decoration, EditorView, keymap, type DecorationSet } from "@codemirror/
 import { Prec, StateEffect, StateField } from "@codemirror/state";
 import { tags as t } from "@lezer/highlight";
 import { useSettings } from "../../store/settingsStore";
+import { useResolvedTheme } from "../../lib/useResolvedTheme";
 
 const setErrorLine = StateEffect.define<number | null>();
 const errorLineField = StateField.define<DecorationSet>({
@@ -74,7 +75,8 @@ export interface CodeEditorProps {
 
 export function CodeEditor({ value, onChange, onRun, errorLine, readOnly, minHeight = "160px", maxHeight, ariaLabel, autoFocus }: CodeEditorProps) {
   const ref = useRef<ReactCodeMirrorRef>(null);
-  const { theme, editorFontSize, lineWrap, showLineNumbers } = useSettings();
+  const { editorFontSize, lineWrap, showLineNumbers } = useSettings();
+  const theme = useResolvedTheme();
   const onRunRef = useRef(onRun);
   onRunRef.current = onRun;
 

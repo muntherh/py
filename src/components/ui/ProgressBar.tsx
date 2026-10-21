@@ -6,12 +6,15 @@ export function ProgressBar({
   tone = "primary",
   label,
   className,
+  color: explicit,
 }: {
   value: number;
   max?: number;
   tone?: "primary" | "success" | "warning" | "danger" | "accent";
   label: string;
   className?: string;
+  /** Any CSS colour; overrides `tone`. */
+  color?: string;
 }) {
   const pct = max > 0 ? Math.max(0, Math.min(100, (value / max) * 100)) : 0;
   const color = { primary: "bg-primary", success: "bg-success", warning: "bg-warning", danger: "bg-danger", accent: "bg-accent" }[tone];
@@ -24,7 +27,7 @@ export function ProgressBar({
       aria-valuemax={max}
       aria-valuenow={Math.round(value)}
     >
-      <div className={clsx("h-full rounded-full transition-[width] duration-500", color)} style={{ width: `${pct}%` }} />
+      <div className={clsx("h-full rounded-full transition-[width] duration-500", !explicit && color)} style={{ width: `${pct}%`, background: explicit }} />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 import { idbStorage } from "./idbStorage";
 
-export type Theme = "dark" | "light";
+export type Theme = "system" | "dark" | "light";
 
 export interface SettingsState {
   theme: Theme;
@@ -14,7 +14,7 @@ export interface SettingsState {
   reset: () => void;
 }
 
-const defaults = { theme: "dark" as Theme, editorFontSize: 14, timeoutSeconds: 10, lineWrap: false, showLineNumbers: true };
+const defaults = { theme: "system" as Theme, editorFontSize: 14, timeoutSeconds: 10, lineWrap: false, showLineNumbers: true };
 
 export const useSettings = create<SettingsState>()(
   persist(

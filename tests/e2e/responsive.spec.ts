@@ -23,11 +23,14 @@ for (const vp of VIEWPORTS) {
   });
 }
 
-test("mobile navigation drawer opens and navigates", async ({ page }) => {
+test("phone tab bar and More sheet navigate", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/#/");
-  await page.getByRole("button", { name: "Open navigation menu" }).click();
-  await page.getByRole("dialog", { name: "Navigation" }).getByRole("link", { name: "Exam Simulator" }).click();
+  const tabs = page.getByRole("navigation", { name: "Tab bar" });
+  await tabs.getByRole("link", { name: "Exams" }).click();
   await expect(page.getByRole("heading", { level: 1, name: "Six timed practice exams" })).toBeVisible();
-  await expect(page.getByRole("dialog", { name: "Navigation" })).toHaveCount(0);
+  await tabs.getByRole("button", { name: "More pages" }).click();
+  await page.getByRole("dialog", { name: "More pages" }).getByRole("link", { name: "Settings" }).click();
+  await expect(page.getByRole("heading", { level: 1, name: "Preferences" })).toBeVisible();
+  await expect(page.getByRole("dialog", { name: "More pages" })).toHaveCount(0);
 });

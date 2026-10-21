@@ -41,10 +41,10 @@ export function SettingsPage() {
         </h2>
         <fieldset className="flex flex-wrap gap-2">
           <legend className="label mb-2">Theme</legend>
-          {(["dark", "light"] as const).map((t) => (
-            <label key={t} className={`btn-secondary cursor-pointer ${s.theme === t ? "border-primary text-primary-text" : ""}`}>
+          {(["system", "light", "dark"] as const).map((t) => (
+            <label key={t} className={`btn-secondary cursor-pointer has-[:focus-visible]:outline-2 ${s.theme === t ? "border-primary bg-primary-soft text-primary-text" : ""}`}>
               <input type="radio" name="theme" className="sr-only" checked={s.theme === t} onChange={() => s.set({ theme: t })} />
-              {t === "dark" ? "Dark navy" : "Light"}
+              {t === "system" ? "Match device" : t === "light" ? "Light" : "Dark"}
             </label>
           ))}
         </fieldset>
