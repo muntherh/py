@@ -82,3 +82,21 @@ test("notebook cells share variables like Jupyter", async ({ page }) => {
   await cells.nth(2).getByRole("button", { name: "Run cell 3" }).click();
   await expect(cells.nth(2).getByTestId("output-console")).toContainText("80");
 });
+
+test("a new notebook cell is not silently stuck behind a cell waiting for input", async ({ page }) => {
+  await page.getByRole("tab", { name: /Notebook/ }).click();
+  const cells = page.getByTestId("notebook-cell");
+  await setEditor(page, cells.nth(1), 'name = input("Enter your name: ")');
+  await cells.nth(1).getByRole("button", { name: "Run cell 2" }).click();
+  await expect(cells.nth(1).getByTestId("stdin-input")).toBeVisible();
+  await page.getByRole("button", { name: "Add a code cell" }).click();
+  const n = await cells.count();
+  const last = cells.nth(n - 1);
+  await setEditor(page, last, 'print("new cell output")');
+  await last.getByRole("button", { name: `Run cell ${n}` }).click();
+  await expect(last.getByTestId("queued-notice")).toContainText("waiting for you to type its input()");
+  await last.getByRole("button", { name: "Cancel the other input" }).click();
+  await expect(last.getByTestId("output-console")).toContainText("new cell output");
+  await expect(cells.nth(1).getByTestId("output-console")).toContainText("EOFError");
+  await expect(last.getByTestId("queued-notice")).toHaveCount(0);
+});

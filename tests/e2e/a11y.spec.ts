@@ -20,6 +20,7 @@ for (const theme of ["dark", "light"] as const) {
 
 test("keyboard: skip link and visible focus", async ({ page }) => {
   await page.goto("/#/");
+  await page.locator("main h1").first().waitFor();
   await page.keyboard.press("Tab");
   const skip = page.getByRole("link", { name: "Skip to content" });
   await expect(skip).toBeFocused();

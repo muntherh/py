@@ -28,6 +28,7 @@ import { OutputConsole } from "../components/code/OutputConsole";
 import { useRunner, useRuntimeState } from "../components/code/useRunner";
 import { CodeRunner } from "../components/code/CodeRunner";
 import { RuntimeBadge } from "../components/code/RuntimeBadge";
+import { QueuedNotice } from "../components/code/QueuedNotice";
 import { ConfirmDialog } from "../components/ui/Dialog";
 import { DifficultyChip, Chip } from "../components/ui/Chip";
 import { pythonRunner } from "../runtime/PythonRunner";
@@ -235,6 +236,7 @@ function NotebookCellView({
         </div>
         <div className="min-w-0 flex-1 space-y-2">
           <CodeEditor value={cell.code} onChange={(v) => setCellCode(cell.id, v)} onRun={() => !r.running && void run()} errorLine={r.lastResult?.line ?? null} ariaLabel={`Notebook cell ${index + 1}`} minHeight="60px" />
+          {r.queued && <QueuedNotice runtimeState={r.runtimeState} />}
           {(r.entries.length > 0 || r.awaitingInput !== null) && (
             <OutputConsole entries={r.entries} awaitingInput={r.awaitingInput} onSubmitInput={r.submitInput} onCancelInput={r.cancelInput} minHeight="2.5rem" />
           )}

@@ -23,6 +23,8 @@ export interface RunOptions {
   outputLimit?: number;
   onWrite?: (stream: "stdout" | "stderr" | "result", text: string) => void;
   onInputRequest?: (prompt: string) => void;
+  /** Called when the program actually starts (it may first wait behind another run). */
+  onStart?: () => void;
 }
 
 export interface RunResult extends PythonOutcome {
@@ -173,6 +175,7 @@ export class PythonRunner {
       };
       this.active = run;
       this.setState("running");
+      opts.onStart?.();
       this.armTimer(run);
       this.post({
         type: "run",
@@ -248,6 +251,11 @@ export class PythonRunner {
     this.cancelledUpTo = this.requested;
     if (!this.active) return;
     this.abort("stopped", "Execution stopped by you. The Python interpreter was restarted.");
+  }
+
+  /** Stop only the program that is running now; runs queued behind it still start. */
+  stopActive() {
+    if (this.active) this.abort("stopped", "Execution stopped so another program could run. The Python interpreter was restarted.");
   }
 
   resetNotebook() {

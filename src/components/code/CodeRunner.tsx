@@ -6,6 +6,7 @@ import { useRunner } from "./useRunner";
 import { explainError } from "../../lib/errorGuide";
 import { SourceCitation } from "../SourceCitation";
 import { RuntimeBadge } from "./RuntimeBadge";
+import { QueuedNotice } from "./QueuedNotice";
 
 /** Editor + toolbar + console. Runs the student's code for real in the Python worker. */
 export function CodeRunner({
@@ -53,6 +54,7 @@ export function CodeRunner({
         </div>
       </div>
       <CodeEditor value={code} onChange={onChange} onRun={() => !busy && r.run(code)} errorLine={result?.line ?? null} ariaLabel={ariaLabel} minHeight={minHeight} />
+      {r.queued && <QueuedNotice runtimeState={r.runtimeState} />}
       <OutputConsole entries={r.entries} awaitingInput={r.awaitingInput} onSubmitInput={r.submitInput} onCancelInput={r.cancelInput} />
       {tip && showTip && (
         <div className="flex gap-3 rounded-xl border border-accent/30 bg-accent-soft p-3 text-sm" role="note">
