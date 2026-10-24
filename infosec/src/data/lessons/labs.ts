@@ -1,0 +1,378 @@
+import { pg } from "../course";
+import type { Lesson } from "../types";
+
+export const LAB_LESSONS: Lesson[] = [
+  // ------------------------------------------------------------------ Lab 4
+  {
+    id: "lab4-ntfs",
+    unitId: "lab4",
+    topicId: "lab4-ntfs",
+    order: 1,
+    title: "NTFS permissions and inheritance",
+    summary: "Rules that decide who can access, modify or delete files and folders — and how they flow from parent folders.",
+    blocks: [
+      {
+        heading: "What NTFS permissions are",
+        body: [
+          "**NTFS permissions** are the rules that determine **who can access, modify, or delete files and folders** on an NTFS-formatted volume.",
+          "NTFS supports **permission inheritance**: files and subfolders get the permissions set on the **parent folder**. **By default, inheritance is enabled** for files and subfolders created within a parent folder. This helps maintain **consistent permissions** throughout the directory.",
+          "**Lab objective:** learn how to **disable permission inheritance**, **modify Access Control Lists (ACLs)**, and **verify effective access permissions**.",
+        ],
+        visual: "inheritance-sim",
+        ar: "أذونات NTFS هي القواعد التي تحدد من يستطيع الوصول إلى الملفات والمجلدات أو تعديلها أو حذفها على قرص بنظام NTFS. ويدعم NTFS وراثة الأذونات (Inheritance): الملفات والمجلدات الفرعية تأخذ أذونات المجلد الأب، والوراثة مفعّلة افتراضياً، مما يحافظ على أذونات متسقة. هدف المختبر: تعطيل الوراثة، وتعديل قوائم التحكم بالوصول ACL، والتحقق من الأذونات الفعلية.",
+        source: pg(4, 8),
+      },
+    ],
+    keyPoints: ["Inheritance is ON by default.", "Children inherit from the parent folder.", "Objective: disable inheritance, modify ACLs, verify effective access."],
+  },
+  {
+    id: "lab4-steps",
+    unitId: "lab4",
+    topicId: "lab4-steps",
+    order: 2,
+    title: "Lab 4 procedure: Steps 1–10",
+    summary: "Properties → Security → Advanced → Add → Select a principal → Allow/Deny → Applies to → permissions → verify → inheritance.",
+    blocks: [
+      {
+        heading: "The ten steps (with the manual's system context)",
+        body: ["Walk through the simulator below, then memorise the order — procedure ordering is a likely paper question."],
+        table: {
+          headers: ["Step", "Action", "What it does"],
+          rows: [
+            ["1", "Right-click the file/folder → **Properties**", "Opens the properties dialog for the selected object."],
+            ["2", "Click the **Security** tab, then **Advanced**", "Displays the **Access Control List (ACL)**: which users and groups currently have permission."],
+            ["3", "Click **Add**", "Creates a brand-new permission entry for a specific user."],
+            ["4", "Click **Select a principal**, enter the username, click **Check Names**", "Cross-references the typed name against the local machine or Active Directory to ensure the account exists."],
+            ["5", "The name is resolved → click **OK**", "Confirms the identity mapping."],
+            ["6", "Set the **type** to **Allow** or **Deny**", "Allow explicitly grants access rights; Deny blocks them entirely."],
+            ["7", "Select **Applies to** as needed", "Controls permission scope (current folder only, subfolders, or files within it)."],
+            ["8", "Set the **permission type** (Read, Write, Modify, Full Control) → **OK**", "Chooses the actions the user can perform; OK saves the rule entry."],
+            ["9", "See the **newly added user listed**", "Confirms the new rule entry is active."],
+            ["10", "To drop inherited permissions, choose the **second option to remove all inherited permissions**", "Folders copy permissions from the parent by default; removing them lets you build custom restrictions from scratch."],
+          ],
+        },
+        visual: "ntfs-sim",
+        ar: "خطوات المختبر الرابع: 1) زر الفأرة الأيمن ← خصائص (Properties)، 2) تبويب الأمان (Security) ثم متقدم (Advanced) لعرض قائمة ACL، 3) إضافة (Add) لإنشاء إدخال صلاحية جديد، 4) اختيار مستخدم (Select a principal) وكتابة الاسم ثم Check Names للتأكد من وجود الحساب، 5) يظهر الاسم محلولاً ثم OK، 6) اختيار النوع سماح (Allow) أو رفض (Deny)، 7) اختيار نطاق التطبيق (Applies to): المجلد الحالي أو المجلدات الفرعية أو الملفات، 8) اختيار نوع الصلاحية (قراءة، كتابة، تعديل، تحكم كامل) ثم OK، 9) يظهر المستخدم الجديد في القائمة، 10) لإزالة الأذونات الموروثة اختر الخيار الثاني لإزالة جميع الأذونات الموروثة وبناء قيود مخصصة من الصفر.",
+        source: pg(4, 8, 9, 10),
+      },
+      {
+        heading: "Checking your understanding (manual answers)",
+        body: ["The manual gives these answers on pg. 11:"],
+        table: {
+          headers: ["Question", "Manual answer"],
+          rows: [
+            ["What is displayed under Advanced in the Security tab (Step 2)?", "The Access Control List (ACL) — all users and groups that hold access permissions for that file or folder."],
+            ["Why click Check Names (Step 4)?", "It cross-references the input against the local machine or Active Directory database to verify the account genuinely exists."],
+            ["Allow vs Deny (Step 6)?", "Allow explicitly grants access rights; Deny completely blocks access rights and natively overrides any existing Allow rules."],
+            ["What does Applies to control (Step 7)?", "Inheritance scope: whether the rule stays on the parent folder only or cascades to subfolders and nested files."],
+            ["Removing inherited permissions (Step 10)?", "Strips away all copied parent permissions, clearing the entry pool so you can build isolated custom restrictions from scratch."],
+          ],
+        },
+        ar: "أسئلة التحقق من الفهم (ص11): Advanced يعرض قائمة ACL؛ Check Names يتأكد من وجود الحساب في الجهاز المحلي أو Active Directory؛ Allow يمنح وDeny يمنع كلياً ويتغلب على قواعد Allow؛ Applies to يحدد نطاق الوراثة؛ وإزالة الأذونات الموروثة تمسح كل أذونات المجلد الأب لبناء قيود مخصصة.",
+        source: pg(4, 11),
+      },
+    ],
+    keyPoints: ["Properties → Security → Advanced → Add → Select a principal → Check Names.", "Deny overrides Allow (manual pg. 11).", "Applies to = scope/inheritance.", "Permission types: Read, Write, Modify, Full Control."],
+    traps: ["Check Names verifies the account EXISTS — it does not grant permissions.", "Advanced shows the ACL; Add creates a new entry."],
+  },
+  // ------------------------------------------------------------------ Lab 5
+  {
+    id: "lab5-types",
+    unitId: "lab5",
+    topicId: "lab5-types",
+    order: 1,
+    title: "Event Viewer and event log types",
+    summary: "Five event types: Information, Warning, Error, Success Audit, Failure Audit.",
+    blocks: [
+      {
+        heading: "What Event Viewer is",
+        body: [
+          "**Microsoft Windows Event Viewer** is a crucial **monitoring tool** used to **troubleshoot system issues** and **audit computer security logs**. It captures operational and security events triggered by the **operating system, services and applications**.",
+          "This lab connects directly to **Chapter 4 (logging and auditing)**.",
+        ],
+        table: {
+          headers: ["Event type", "Description / security meaning (pg. 11)"],
+          rows: [
+            ["Information", "An application, service, or driver successfully completed an operation."],
+            ["Warning", "A situation that is probably significant but not yet serious (e.g., low disk space)."],
+            ["Error", "A serious problem indicating a loss of functionality or potential data loss."],
+            ["Success Audit", "A successfully audited security event (e.g., a user successfully logs on)."],
+            ["Failure Audit", "An unsuccessful audited security event (e.g., a user failed logon attempt)."],
+          ],
+        },
+        visual: "event-types",
+        ar: "عارض الأحداث في ويندوز أداة مراقبة مهمة لاستكشاف مشاكل النظام وتدقيق سجلات الأمان، ويلتقط الأحداث التشغيلية والأمنية من نظام التشغيل والخدمات والتطبيقات. أنواع الأحداث: معلومات (Information) عملية تمت بنجاح؛ تحذير (Warning) حالة مهمة لكنها ليست خطيرة بعد مثل انخفاض مساحة القرص؛ خطأ (Error) مشكلة خطيرة تعني فقدان وظيفة أو احتمال فقدان بيانات؛ تدقيق ناجح (Success Audit) مثل تسجيل دخول ناجح؛ تدقيق فاشل (Failure Audit) مثل محاولة دخول فاشلة.",
+        source: pg(5, 11),
+      },
+    ],
+    keyPoints: ["Info = success. Warning = significant, not yet serious (low disk). Error = loss of functionality/data.", "Success Audit = successful logon. Failure Audit = failed logon attempt."],
+    traps: ["A failed logon is a Failure AUDIT, not an Error."],
+  },
+  {
+    id: "lab5-steps",
+    unitId: "lab5",
+    topicId: "lab5-steps",
+    order: 2,
+    title: "Lab 5 procedure: Steps 1–5",
+    summary: "Open Event Viewer → Application log → Filter Current Log → choose levels/time → Find a keyword.",
+    blocks: [
+      {
+        heading: "The five steps",
+        body: ["Use the simulator to practise inspecting and filtering events exactly as in the manual."],
+        table: {
+          headers: ["Step", "Action (pg. 12–13)"],
+          rows: [
+            ["1. Open Event Viewer", "Click Windows **Search**, type **'Event Viewer'**, select the app from the results."],
+            ["2. Navigate to Application logs", "Expand **'Windows Logs'** in the left tree, click **'Application'**. Select an event: **General** tab = basic info; **Details** tab = deep contents."],
+            ["3. Filter current logs", "Click **'Filter Current Log...'** in the right-hand **Actions** pane."],
+            ["4. Configure levels", "Choose the levels (Information, Warning, Error, Audits) to show only the required events. Optionally filter by time (**Logged**: last hour, week, month…, or **Custom range** with From/To)."],
+            ["5. Search keywords", "Right-click the log category → **'Find'** → enter the keyword → **'Find Next'**."],
+          ],
+        },
+        visual: "event-viewer-sim",
+        ar: "خطوات المختبر الخامس: 1) فتح عارض الأحداث من البحث بكتابة Event Viewer، 2) توسيع Windows Logs واختيار Application، واختيار حدث: تبويب General للمعلومات الأساسية وتبويب Details للتفاصيل العميقة، 3) الضغط على Filter Current Log في جزء الإجراءات Actions على اليمين، 4) اختيار المستويات المطلوبة (معلومات، تحذير، خطأ، تدقيق) ويمكن التصفية حسب الوقت (آخر ساعة، أسبوع، شهر أو نطاق مخصص من/إلى)، 5) زر الفأرة الأيمن على فئة السجل ← Find ← كتابة الكلمة ← Find Next.",
+        source: pg(5, 12, 13),
+      },
+    ],
+    keyPoints: ["Windows Logs → Application.", "General tab = basic; Details tab = deep contents.", "Filter Current Log… is in the Actions pane.", "Find → Find Next for keywords."],
+  },
+  // ------------------------------------------------------------------ Lab 6
+  {
+    id: "lab6-overview",
+    unitId: "lab6",
+    topicId: "lab6-overview",
+    order: 1,
+    title: "Substitution vs transposition ciphers",
+    summary: "Substitution replaces characters; transposition scrambles their order.",
+    blocks: [
+      {
+        heading: "Two branches of traditional symmetric ciphers",
+        body: ["Traditional symmetric ciphers are divided into two fundamental branches:"],
+        table: {
+          headers: ["Branch", "What it does", "Ciphers in Lab 6"],
+          rows: [
+            ["Substitution", "**Replaces** characters with different characters (based on a fixed rule or key)", "I. Caesar cipher · II. Vigenère cipher"],
+            ["Transposition", "**Scrambles the order** of the existing characters", "I. Rail Fence cipher · II. Route cipher"],
+          ],
+        },
+        ar: "تنقسم الشفرات المتماثلة التقليدية إلى فرعين: شفرات الإحلال/الاستبدال (Substitution) التي تستبدل كل حرف بحرف آخر حسب قاعدة أو مفتاح ثابت، مثل قيصر وفيجنير؛ وشفرات التبديل/الإزاحة الموضعية (Transposition) التي تعيد ترتيب الأحرف نفسها، مثل السياج (Rail Fence) والمسار (Route).",
+        source: pg(6, 13),
+      },
+    ],
+    keyPoints: ["Substitution: letters change (Caesar, Vigenère).", "Transposition: same letters, new order (Rail Fence, Route)."],
+    traps: ["In a transposition ciphertext you will find exactly the same letters as the plaintext — a quick self-check on paper."],
+  },
+  {
+    id: "lab6-alphabet",
+    unitId: "lab6",
+    topicId: "lab6-alphabet",
+    order: 2,
+    title: "Making the alphabet table (A = 0 … Z = 25)",
+    summary: "The exam notice says: learn to make the alphabet table. Build it from memory in under a minute.",
+    blocks: [
+      {
+        heading: "The table in the manual",
+        body: [
+          "Every Caesar and Vigenère calculation converts letters to numbers with **A = 0, B = 1, …, Z = 25**. The manual draws it as two rows of 13 letters with the number under each letter.",
+          "**How to build it on paper (no calculator):**",
+        ],
+        bullets: [
+          "Draw a grid of **2 rows × 13 columns**.",
+          "Row 1: write **A to M**; under them **0 to 12**.",
+          "Row 2: write **N to Z**; under them **13 to 25**.",
+          "Checkpoints to self-verify: **A = 0, E = 4, J = 9, M = 12, N = 13, T = 19, Z = 25**. Each row has exactly 13 letters.",
+        ],
+        visual: "alphabet-table",
+        ar: "جدول الحروف: نحول كل حرف إلى رقم بحيث A = 0 وB = 1 حتى Z = 25. طريقة رسمه في الامتحان: شبكة من صفين و13 عموداً؛ الصف الأول من A إلى M وتحتها من 0 إلى 12، والصف الثاني من N إلى Z وتحتها من 13 إلى 25. نقاط تحقق: A=0، E=4، J=9، M=12، N=13، T=19، Z=25.",
+        source: pg(6, 13),
+      },
+      {
+        heading: "mod 26 without a calculator",
+        body: [
+          "All results must land in **0–25**. On paper: if a sum is **26 or more, subtract 26**; if a difference is **negative, add 26**. Example from the manual: 40 → 40 − 26 = **14 (O)**; 33 → 33 − 26 = **7 (H)**; 26 → 26 − 26 = **0 (A)**.",
+        ],
+        ar: "حساب باقي القسمة على 26 بدون آلة حاسبة: إذا كان المجموع 26 أو أكثر نطرح 26، وإذا كان الفرق سالباً نضيف 26. أمثلة من الدليل: 40−26=14 أي O، و33−26=7 أي H، و26−26=0 أي A.",
+        source: pg(6, 15),
+      },
+    ],
+    keyPoints: ["A–M = 0–12, N–Z = 13–25.", "≥ 26 → subtract 26; negative → add 26."],
+  },
+  {
+    id: "lab6-caesar",
+    unitId: "lab6",
+    topicId: "lab6-caesar",
+    order: 3,
+    title: "Caesar cipher",
+    summary: "Monoalphabetic substitution: shift every letter by the same key K.",
+    blocks: [
+      {
+        heading: "Definition and steps",
+        body: ["The **Caesar cipher** is a **monoalphabetic substitution cipher** where each plaintext letter is **shifted a fixed number of places** down the alphabet."],
+        table: {
+          headers: ["Step", "Manual (pg. 14)"],
+          rows: [
+            ["1", "Choose a shift value **K between 1 and 25**."],
+            ["2", "Convert each letter into its number (A = 0 … Z = 25)."],
+            ["3", "Encrypt: **E(x) = (x + K) mod 26**."],
+            ["4", "Convert the numbers back into letters."],
+            ["5", "Decrypt: **D(c) = (c − K) mod 26**."],
+          ],
+        },
+        ar: "شفرة قيصر شفرة إحلال أحادية الأبجدية: نزيح كل حرف بعدد ثابت من المواقع. الخطوات: اختيار مفتاح K بين 1 و25، تحويل الحروف إلى أرقام، التشفير E(x) = (x + K) mod 26، تحويل الأرقام إلى حروف، وفك التشفير D(c) = (c − K) mod 26.",
+        source: pg(6, 13, 14),
+      },
+      {
+        heading: "Solved example: SECRET, K = 3",
+        body: ["Exactly the manual's table — then try the interactive version below."],
+        table: {
+          headers: ["Plaintext", "x", "x + 3", "(x + 3) mod 26", "Ciphertext"],
+          rows: [
+            ["S", "18", "21", "21", "V"],
+            ["E", "4", "7", "7", "H"],
+            ["C", "2", "5", "5", "F"],
+            ["R", "17", "20", "20", "U"],
+            ["E", "4", "7", "7", "H"],
+            ["T", "19", "22", "22", "W"],
+          ],
+        },
+        bullets: ["**Ciphertext: VHFUHW**", "Manual question: CRYPTO with K = 7 → **JYFWAV** (Y: 24 + 7 = 31 → 31 − 26 = 5 = F; T: 19 + 7 = 26 → 0 = A)."],
+        visual: "caesar-demo",
+        ar: "مثال الدليل: SECRET بالمفتاح 3 تصبح VHFUHW. وسؤال الدليل: CRYPTO بالمفتاح 7 تصبح JYFWAV (لاحظ Y: 24+7=31 ثم 31−26=5 أي F).",
+        source: pg(6, 14),
+      },
+    ],
+    keyPoints: ["E(x) = (x + K) mod 26.", "D(c) = (c − K) mod 26.", "K between 1 and 25.", "Monoalphabetic: the same shift for every letter."],
+    traps: ["Count A as 0, not 1.", "Same plaintext letter → same ciphertext letter (both E's became H)."],
+  },
+  {
+    id: "lab6-vigenere",
+    unitId: "lab6",
+    topicId: "lab6-vigenere",
+    order: 4,
+    title: "Vigenère cipher",
+    summary: "Polyalphabetic substitution: each keyword letter gives the shift for one plaintext letter.",
+    blocks: [
+      {
+        heading: "Definition and steps",
+        body: ["The **Vigenère cipher** is a **polyalphabetic substitution cipher**. It uses a **keyword**; each keyword letter determines the shift for the corresponding plaintext letter."],
+        table: {
+          headers: ["Step", "Manual (pg. 14)"],
+          rows: [
+            ["1", "Choose a keyword."],
+            ["2", "**Repeat the keyword** to match the length of the plaintext."],
+            ["3", "For each letter use the Vigenère square, or **add the numerical values** of the plaintext letter and the key letter."],
+            ["4", "Encrypt: **E(i) = (Pi + Ki) mod 26**."],
+            ["5", "Decrypt: **D(i) = (Ci − Ki) mod 26**."],
+          ],
+        },
+        ar: "شفرة فيجنير شفرة إحلال متعددة الأبجدية تستخدم كلمة مفتاحية؛ كل حرف من المفتاح يحدد مقدار الإزاحة للحرف المقابل. الخطوات: اختيار الكلمة المفتاحية، تكرارها بطول النص، جمع قيمة حرف النص مع قيمة حرف المفتاح، التشفير E(i) = (Pi + Ki) mod 26، وفك التشفير D(i) = (Ci − Ki) mod 26.",
+        source: pg(6, 14),
+      },
+      {
+        heading: "Solved example: SECRET with key WORD",
+        body: ["Key repeated as **WORDWO**:"],
+        table: {
+          headers: ["P", "K", "P value", "K value", "Sum", "Sum mod 26", "C"],
+          rows: [
+            ["S", "W", "18", "22", "40", "14 (40 − 26)", "O"],
+            ["E", "O", "4", "14", "18", "18", "S"],
+            ["C", "R", "2", "17", "19", "19", "T"],
+            ["R", "D", "17", "3", "20", "20", "U"],
+            ["E", "W", "4", "22", "26", "0 (26 − 26)", "A"],
+            ["T", "O", "19", "14", "33", "7 (33 − 26)", "H"],
+          ],
+        },
+        bullets: ["**Final ciphertext: OSTUAH**", "Notice the two E's became **S** and **A** — that is what *polyalphabetic* means."],
+        visual: "vigenere-demo",
+        ar: "مثال الدليل: SECRET بالمفتاح WORD (يتكرر WORDWO) تصبح OSTUAH. لاحظ أن الحرفين E تحوّلا إلى S وA لأن الشفرة متعددة الأبجدية.",
+        source: pg(6, 15),
+      },
+    ],
+    keyPoints: ["Repeat the key to the message length.", "Encrypt: add values, mod 26. Decrypt: subtract, add 26 if negative.", "Polyalphabetic: the same letter can encrypt differently."],
+    traps: ["Start the repeated key under the FIRST plaintext letter.", "When decrypting, a negative difference needs + 26 (e.g. A(0) − W(22) = −22 → 4 = E)."],
+  },
+  {
+    id: "lab6-rail",
+    unitId: "lab6",
+    topicId: "lab6-rail",
+    order: 5,
+    title: "Rail Fence cipher",
+    summary: "Write the message in a zig-zag over a number of rails, then read row by row.",
+    blocks: [
+      {
+        heading: "Definition and steps",
+        body: ["The **Rail Fence cipher** (or **zig-zag cipher**) writes the plaintext downwards on successive “rails” of an imaginary fence, then reads it **row by row**."],
+        table: {
+          headers: ["Step", "Manual (pg. 15)"],
+          rows: [
+            ["1", "Determine the number of **depth (rows)** to use."],
+            ["2", "Write the plaintext characters **diagonally down and up** across the rows."],
+            ["3", "Read the characters **horizontally, row from top to bottom** to form the ciphertext."],
+            ["4", "To decrypt: **reconstruct the grid shape using placeholders**, fill the rows sequentially, and read the zig-zag path."],
+          ],
+        },
+        ar: "شفرة السياج (Rail Fence) أو الشفرة المتعرجة: نكتب النص بشكل متعرج نزولاً وصعوداً على عدد من الصفوف (العمق)، ثم نقرأ الصفوف أفقياً من الأعلى إلى الأسفل. ولفك التشفير نعيد بناء شكل الشبكة بعلامات مكان، ونملأ الصفوف بالترتيب، ثم نقرأ المسار المتعرج.",
+        source: pg(6, 15),
+      },
+      {
+        heading: "Solved example and question",
+        body: [
+          "**MUSCAT, depth 3:** M (row 1), U (row 2), S (row 3), C (row 2), A (row 1), T (row 2). Rows: **MA | UCT | S** → **MAUCTS**.",
+          "**Question: CIPHERTEXT, depth 3** → rows **CEX | IHRET | PT** → **CEXIHRETPT**.",
+        ],
+        visual: "rail-demo",
+        ar: "مثال الدليل: MUSCAT بعمق 3 تصبح MAUCTS. وسؤال الدليل: CIPHERTEXT بعمق 3 تصبح CEXIHRETPT.",
+        source: pg(6, 15, 16),
+      },
+    ],
+    keyPoints: ["Zig-zag down and up; read row by row.", "Decrypt: count letters per rail (placeholders), fill rails, read zig-zag."],
+    traps: ["The bounce happens at the top and bottom rails — the middle rail gets about twice as many letters."],
+  },
+  {
+    id: "lab6-route",
+    unitId: "lab6",
+    topicId: "lab6-route",
+    order: 6,
+    title: "Route cipher",
+    summary: "Write the message into a fixed grid, then read it out along a route (e.g. a clockwise spiral).",
+    blocks: [
+      {
+        heading: "Definition and steps",
+        body: ["The **Route cipher** writes the message into a **grid of fixed dimensions** (rows and columns) and reads it out following a **specific route**, such as a clockwise spiral, counterclockwise spiral, or alternating diagonals."],
+        table: {
+          headers: ["Step", "Manual (pg. 16)"],
+          rows: [
+            ["1", "Choose a **grid size** (e.g. 3 columns, 4 rows) and a **route** (e.g. spiral inward clockwise from top left)."],
+            ["2", "Write the plaintext **horizontally into the grid row by row**; pad empty spaces at the end with dummy characters like **'X'**."],
+            ["3", "Extract the characters by following the route to construct the ciphertext."],
+            ["4", "To decrypt, **reverse the path** to place characters back into the grid, then **read horizontally**."],
+          ],
+        },
+        ar: "شفرة المسار (Route): نكتب الرسالة في شبكة ذات أبعاد ثابتة ثم نقرأ الحروف باتباع مسار محدد مثل الحلزون باتجاه عقارب الساعة. الخطوات: اختيار حجم الشبكة والمسار، كتابة النص أفقياً صفاً بصف وملء الفراغات بحرف X، استخراج الحروف حسب المسار، ولفك التشفير نعكس المسار لإعادة الحروف إلى الشبكة ثم نقرأ أفقياً.",
+        source: pg(6, 16),
+      },
+      {
+        heading: "Example 1: HIDETHEGOLD (3 columns × 4 rows)",
+        body: ["Route: **spiral inward clockwise, starting from top-left**. One X pads the 12th cell."],
+        table: { headers: ["", "Col 1", "Col 2", "Col 3"], rows: [["Row 1", "H", "I", "D"], ["Row 2", "E", "T", "H"], ["Row 3", "E", "G", "O"], ["Row 4", "L", "D", "X"]] },
+        bullets: ["Right along the top: H I D → down: H O X → left: D L → up: E E → right: T → down: G.", "**Ciphertext: HIDHOXDLEETG**"],
+        visual: "route-demo",
+        ar: "المثال الأول: HIDETHEGOLD في شبكة 3 أعمدة × 4 صفوف مع حرف X إضافي، والمسار حلزوني باتجاه عقارب الساعة من الأعلى يساراً، فينتج HIDHOXDLEETG.",
+        source: pg(6, 16),
+      },
+      {
+        heading: "Example 2: WE ARE DISCOVERED FLEE AT ONCE (5 × 5)",
+        body: [
+          "In Example 2 the manual's grid is filled **column by column** (W-E-A-R-E down the first column) — different from step 2's “row by row”. The simulator supports both.",
+          "**Key 1 — top-right corner, down then to the left:** read the last column down (TONCE), then the bottom row leftwards (ADOE); repeat on the inner grid → **TONCEADOEFLEEECRVERSADIEW**.",
+          "**Same start using the spiral model:** down the last column, left along the bottom, up the first column, right along the top, and inward → **TONCEADOERAEWDVFLEEECSIER**.",
+        ],
+        table: { headers: ["", "1", "2", "3", "4", "5"], rows: [["1", "W", "D", "V", "F", "T"], ["2", "E", "I", "E", "L", "O"], ["3", "A", "S", "R", "E", "N"], ["4", "R", "C", "E", "E", "C"], ["5", "E", "O", "D", "A", "E"]] },
+        ar: "المثال الثاني: تُكتب الرسالة في شبكة 5×5 عموداً بعمود (وهذا يختلف عن الخطوة 2 التي تقول صفاً بصف). المفتاح الأول من الزاوية العليا اليمنى نزولاً ثم يساراً ينتج TONCEADOEFLEEECRVERSADIEW، وبالنموذج الحلزوني من الزاوية نفسها ينتج TONCEADOERAEWDVFLEEECSIER.",
+        source: pg(6, 16),
+      },
+    ],
+    keyPoints: ["Write into the grid, pad with X, read along the route.", "Decrypt: place letters back along the route, read in writing order.", "Always state: grid size, fill direction, route, starting corner."],
+    traps: ["Example 2 fills columns, not rows — read the question's instructions carefully.", "Remove padding X's at the end when decrypting."],
+  },
+];

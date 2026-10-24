@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CSSY1208 Information Security Midterm Academy — lessons, cryptography lab, question bank and 20-mark mock exams for Chapters 1–4 and Labs 4–6." />
+    <meta name="theme-color" content="#0a1330" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>
+      // The app uses hash routes (/#/learn). If someone opens or refreshes a plain path
+      // such as /learn/ch1-cia, the host serves index.html and this turns it into /#/learn/ch1-cia.
+      (function () {
+        var p = location.pathname;
+        if (!location.hash && /^\/(learn|crypto|flashcards|practice|exams|revision|mistakes|progress|sources|settings)(\/|$)/.test(p)) {
+          location.replace("/#" + p + location.search);
+        }
+      })();
+      try {
+        var t = localStorage.getItem("isma-theme") || "dark";
+        document.documentElement.dataset.theme = t;
+      } catch (e) { document.documentElement.dataset.theme = "dark"; }
+    </script>
+    <title>CSSY1208 — Information Security Midterm Academy</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,392 @@
+import { s } from "../course";
+import type { Lesson } from "../types";
+
+export const CH1_LESSONS: Lesson[] = [
+  {
+    id: "ch1-intro",
+    unitId: "ch1",
+    topicId: "ch1-intro",
+    order: 1,
+    title: "What is information security?",
+    summary: "Information security protects information and information systems — in short, it protects our assets.",
+    blocks: [
+      {
+        heading: "The mission",
+        body: [
+          "**Information security** means protecting information and information systems from **unauthorized access, use, disclosure, disruption, modification, or destruction**.",
+          "In short, information security means **protecting our assets**. An **asset** is any physical or digital resource belonging to an organization that has value and must be protected from threats, theft, or unauthorized access.",
+        ],
+        bullets: ["Malicious actors", "Environment", "Infrastructure", "Human error"],
+        ar: "أمن المعلومات (Information Security) هو حماية المعلومات وأنظمة المعلومات من الوصول غير المصرّح به أو الاستخدام أو الإفشاء أو التعطيل أو التعديل أو الإتلاف. باختصار: هو حماية الأصول (Assets). والأصل هو أي مورد مادي أو رقمي تملكه المؤسسة وله قيمة ويجب حمايته من التهديدات والسرقة والوصول غير المصرّح به. الشريحة تعرض أربعة مصادر للخطر: الجهات الخبيثة، البيئة، البنية التحتية، والخطأ البشري.",
+        source: s("L1", 4),
+      },
+      {
+        heading: "What Chapter 1 covers",
+        body: ["The chapter outline lists: defining information security, information security goals, CIA, attack types, basic terminology, the risk management process, incident response, defense in depth (layers), and laws and regulations."],
+        ar: "يغطي الفصل الأول: تعريف أمن المعلومات، أهدافه، مثلث CIA، أنواع الهجمات، المصطلحات الأساسية، عملية إدارة المخاطر، الاستجابة للحوادث، الدفاع المتعدد الطبقات، والقوانين والأنظمة.",
+        source: s("L1", 3),
+      },
+    ],
+    keyPoints: [
+      "Info security = protecting information and systems from unauthorized access, use, disclosure, disruption, modification, or destruction.",
+      "In short: protecting our assets.",
+      "Asset = any physical or digital resource with value that must be protected.",
+    ],
+    traps: ["Memorise all six words in the definition: access, use, disclosure, disruption, modification, destruction."],
+  },
+  {
+    id: "ch1-cia",
+    unitId: "ch1",
+    topicId: "ch1-cia",
+    order: 2,
+    title: "The CIA triad",
+    summary: "Confidentiality, Integrity and Availability — the model for thinking about any security concept.",
+    blocks: [
+      {
+        heading: "Three core principles",
+        body: [
+          "Three of the primary concepts in information security are **confidentiality, integrity, and availability**, commonly known as the **CIA triad**.",
+          "The triad provides a **model** for thinking about and discussing any security concept, particularly as it pertains to data.",
+        ],
+        visual: "cia-triangle",
+        ar: "المبادئ الأساسية الثلاثة هي: السرية (Confidentiality)، والسلامة/النزاهة (Integrity)، والتوافر (Availability)، وتُعرف معاً بمثلث CIA. وهو نموذج نستخدمه للتفكير ومناقشة أي مفهوم أمني، خاصة فيما يتعلق بالبيانات.",
+        source: s("L1", 5),
+      },
+      {
+        heading: "Confidentiality",
+        body: [
+          "**Confidentiality** means keeping sensitive data private and hidden from people who should not see it. Information and systems should only be **accessed, read, or known by authorized people**.",
+          "How is confidentiality compromised?",
+        ],
+        bullets: [
+          "**Physical loss** — a laptop containing sensitive data is lost or stolen.",
+          "**Human error** — an email attachment is accidentally sent to the wrong person.",
+          "**Direct observation** — a person looks over your shoulder while you type a password.",
+          "**Malicious attack** — an attacker penetrates your systems to access private information.",
+        ],
+        ar: "السرية تعني إبقاء البيانات الحساسة خاصة ومخفية عن الأشخاص غير المخوّلين برؤيتها؛ فلا يصل إليها أو يقرؤها أو يعرفها إلا المصرّح لهم. تُخترق السرية عبر: الفقدان المادي (ضياع حاسوب محمول)، الخطأ البشري (إرسال مرفق لشخص خاطئ)، المراقبة المباشرة (النظر من فوق الكتف أثناء كتابة كلمة المرور)، أو الهجوم الخبيث (اختراق الأنظمة).",
+        source: s("L1", 6),
+      },
+      {
+        heading: "Scenario: the unlocked laptop",
+        body: [
+          "An employee steps away for coffee, leaving the screen open. Anyone walking past can see **confidential customer files**. The employee remembers security training, **locks the screen (Windows Key + L)** and walks away.",
+          "The risk is **unauthorized viewing** of private data, so the CIA component at risk is **confidentiality**. Locking the screen protects it; even a few minutes unlocked is enough for someone to see or copy data.",
+        ],
+        ar: "سيناريو الحاسوب غير المقفل: موظف يترك شاشته مفتوحة، فيستطيع أي مار رؤية ملفات العملاء السرية. المكوّن المهدد هو السرية. الحل: قفل الشاشة باستخدام Windows + L.",
+        source: s("L1", 7),
+      },
+      {
+        heading: "Integrity",
+        body: [
+          "**Integrity** is the ability to **prevent data from being changed in an unauthorized or undesirable manner**, keeping it safe as it is stored or used (the slide title: *unauthorized update*).",
+          "Example: an attacker changing a value in a database, or the unauthorized deletion of data.",
+          "**Scenario — the grade changer:** a student hacks the school's grade book and changes an **F to an A**. Because data was **altered without authorization**, integrity is broken. If the student had only *looked* at the grades, **confidentiality** would be broken instead.",
+        ],
+        ar: "السلامة (Integrity) هي القدرة على منع تغيير البيانات بطريقة غير مصرّح بها أو غير مرغوبة. مثال: تغيير قيمة في قاعدة بيانات أو حذف بيانات دون إذن. في سيناريو تغيير الدرجة من F إلى A تم كسر السلامة لأن البيانات عُدّلت؛ ولو اكتفى الطالب بالنظر لكان المكسور هو السرية. ملاحظة: السلامة لا تعني إبقاء المعلومات سرية.",
+        source: s("L1", 8),
+      },
+      {
+        heading: "Availability",
+        body: [
+          "**Availability** means that **authorized users can access systems, data, and services whenever they need them**.",
+          "Common threats to availability: attacks or hacking the system; **hardware failures** (broken servers, hard drives, network switches); **natural disasters** (fires, floods, power outages that destroy or disable data centers); **human error** (accidental file deletions or bad software updates).",
+          "**Scenario:** an employee accidentally deletes a shared database folder; the only backup is **six months old**, so months of data are permanently gone. The failed pillar is **availability**.",
+        ],
+        ar: "التوافر يعني أن المستخدمين المصرّح لهم يستطيعون الوصول إلى الأنظمة والبيانات والخدمات متى احتاجوا إليها. من التهديدات: الهجمات، أعطال الأجهزة، الكوارث الطبيعية، والخطأ البشري. في سيناريو حذف مجلد قاعدة البيانات مع نسخة احتياطية قديمة (6 أشهر) فشل ركن التوافر.",
+        source: s("L1", 9),
+      },
+    ],
+    keyPoints: [
+      "Confidentiality = only authorized people can access, read or know it.",
+      "Integrity = prevent unauthorized or undesirable changes (including unauthorized deletion).",
+      "Availability = authorized users can access systems, data and services whenever needed.",
+      "Viewing without permission → confidentiality. Changing → integrity. Cannot access/lost → availability.",
+    ],
+    traps: [
+      "“Data integrity only focuses on keeping information secret” is FALSE — that is confidentiality.",
+      "The slide lists unauthorized deletion as an integrity example, but losing access to data (the deleted-folder scenario) is used as the availability scenario. Read what the question emphasises: changed/deleted without authorization → integrity; users cannot get the data they need → availability.",
+    ],
+  },
+  {
+    id: "ch1-terms",
+    unitId: "ch1",
+    topicId: "ch1-terms",
+    order: 3,
+    title: "Core cybersecurity terms",
+    summary: "Asset, threat, threat agent, vulnerability, exploiting and risk — and how they connect.",
+    blocks: [
+      {
+        heading: "Definitions",
+        body: ["Learn these six definitions exactly; they are the vocabulary for the rest of the course."],
+        table: {
+          headers: ["Term", "Definition (slide 10)"],
+          rows: [
+            ["Asset", "Anything of value to the organization that needs protection (e.g., data, hardware, reputation)."],
+            ["Threat", "Any potential event that could cause a loss or harm to an asset."],
+            ["Threat agent", "The actual entity or actor that carries out that threat (e.g., a hacker, malware, or a natural disaster)."],
+            ["Vulnerability", "A flaw or weakness in a system, process, or control that leaves it open to attack."],
+            ["Exploiting", "The act of taking advantage of a vulnerability to breach security or cause harm."],
+            ["Risk", "The mathematical likelihood or probability that a threat agent will successfully exploit a vulnerability, resulting in a loss."],
+          ],
+        },
+        visual: "risk-chain",
+        ar: "الأصل (Asset): أي شيء ذو قيمة يحتاج إلى حماية. التهديد (Threat): أي حدث محتمل قد يسبب خسارة أو ضرراً للأصل. عامل التهديد (Threat Agent): الجهة الفعلية التي تنفذ التهديد (مخترق، برمجية خبيثة، كارثة طبيعية). الثغرة (Vulnerability): عيب أو ضعف في نظام أو عملية أو ضابط يجعله عرضة للهجوم. الاستغلال (Exploiting): الاستفادة من الثغرة لاختراق الأمن أو إحداث ضرر. الخطر (Risk): احتمال أن ينجح عامل التهديد في استغلال ثغرة مما يؤدي إلى خسارة.",
+        source: s("L1", 10),
+      },
+      {
+        heading: "Scenario: the online bank",
+        body: ["How the terms map onto a real situation:"],
+        table: {
+          headers: ["Term", "Online bank"],
+          rows: [
+            ["Asset", "The bank's customer database (credit card numbers, account balances)"],
+            ["Threat agent", "A professional criminal hacker looking to make money"],
+            ["Threat", "A data breach where sensitive information is stolen and sold on the dark web"],
+            ["Vulnerability", "An outdated security patch on the main web server"],
+            ["Exploiting", "The hacker uses a malicious script on the unpatched server to break through the flaw"],
+            ["Risk", "The high likelihood that a hacker will find this unpatched server and steal the data"],
+          ],
+        },
+        ar: "سيناريو البنك الإلكتروني: الأصل = قاعدة بيانات العملاء، عامل التهديد = مخترق محترف، التهديد = تسريب البيانات وبيعها، الثغرة = تحديث أمني قديم على الخادم، الاستغلال = استخدام سكربت خبيث لاختراق الخادم، الخطر = الاحتمال المرتفع لحدوث ذلك.",
+        source: s("L1", 11),
+      },
+      {
+        heading: "Scenario: personal photos on a smartphone",
+        body: ["The same six terms in everyday life:"],
+        table: {
+          headers: ["Term", "Smartphone"],
+          rows: [
+            ["Asset", "Your private photos and chat history"],
+            ["Threat agent", "A nosy classmate, coworker, or thief sitting next to you"],
+            ["Threat", "Unauthorized access to your private life (loss of privacy or embarrassment)"],
+            ["Vulnerability", "No passcode or PIN lock on the lock screen"],
+            ["Exploiting", "You walk away; the person picks up the unlocked phone and opens your gallery"],
+            ["Risk", "The high likelihood that someone will look at your private data if the phone is left unattended"],
+          ],
+        },
+        ar: "سيناريو الهاتف الذكي: الأصل = الصور والمحادثات الخاصة، عامل التهديد = زميل فضولي أو لص، التهديد = الوصول غير المصرّح به، الثغرة = عدم وجود رمز قفل، الاستغلال = أخذ الهاتف المفتوح وفتح المعرض، الخطر = احتمال اطلاع شخص على بياناتك.",
+        source: s("L1", 12),
+      },
+    ],
+    keyPoints: [
+      "Threat = the potential event; threat agent = who/what carries it out.",
+      "Vulnerability = the weakness; exploiting = taking advantage of it.",
+      "Risk = likelihood that a threat agent successfully exploits a vulnerability.",
+      "A risk only exists if a threat matches a vulnerability (slide 17).",
+    ],
+    traps: ["Do not confuse threat (the event, e.g. data breach) with threat agent (the actor, e.g. hacker)."],
+  },
+  {
+    id: "ch1-attacks",
+    unitId: "ch1",
+    topicId: "ch1-attacks",
+    order: 4,
+    title: "Attacks and attack types",
+    summary: "Passive vs active attacks, and the four attack types: interception, interruption, modification, fabrication.",
+    blocks: [
+      {
+        heading: "Passive and active attacks",
+        body: [
+          "A useful way of classifying security attacks is **passive** and **active**:",
+          "When we look at what makes up an attack, we can break it down according to the **type of attack**, the **risk** the attack represents, and the **controls** we might use to mitigate it.",
+        ],
+        bullets: [
+          "**Passive attack** — attempts to learn or make use of information from the system but does **not affect system resources**.",
+          "**Active attack** — attempts to **alter system resources or affect their operation**.",
+        ],
+        ar: "تصنَّف الهجمات إلى: هجوم سلبي (Passive) يحاول معرفة المعلومات أو استخدامها دون التأثير على موارد النظام، وهجوم نشط (Active) يحاول تعديل موارد النظام أو التأثير على عملها. ونحلل أي هجوم حسب نوعه، والخطر الذي يمثله، والضوابط التي نستخدمها للحد منه.",
+        source: s("L1", 13),
+      },
+      {
+        heading: "The four types of attack",
+        body: ["Each attack type breaches one CIA principle. Memorise the table — it is a classic matching question."],
+        table: {
+          headers: ["Type", "Definition", "Breach of", "Examples"],
+          rows: [
+            ["Interception", "An unauthorised party has gained the ability to read or know a particular piece of information", "Confidentiality", "Unauthorised access to stored information; sniffing; illegal copying"],
+            ["Interruption", "Information or systems are not available when needed by a legitimate user", "Availability", "Denial of Service attack against a website; cutting a communications line; disabling a file management system"],
+            ["Modification", "A resource is altered in an unauthorised way", "Integrity", "Changing a database value from 100 to 1000 to commit fraud"],
+            ["Fabrication", "False entities are created", "Integrity", "Adding false sales records to a database to commit fraud"],
+          ],
+        },
+        visual: "attack-types",
+        ar: "أنواع الهجمات الأربعة: الاعتراض (Interception) يخرق السرية مثل التنصت والنسخ غير القانوني؛ المقاطعة (Interruption) تخرق التوافر مثل هجوم حجب الخدمة DoS أو قطع خط الاتصال؛ التعديل (Modification) يخرق السلامة مثل تغيير قيمة من 100 إلى 1000؛ التلفيق/الاختلاق (Fabrication) يخرق السلامة مثل إضافة سجلات مبيعات مزيفة.",
+        source: s("L1", 14),
+      },
+    ],
+    keyPoints: [
+      "Interception → Confidentiality.",
+      "Interruption → Availability.",
+      "Modification → Integrity.",
+      "Fabrication → Integrity.",
+      "Passive = learn/use information without affecting resources; Active = alter resources or their operation.",
+    ],
+    traps: ["Both modification AND fabrication breach integrity — fabrication is not a breach of availability."],
+  },
+  {
+    id: "ch1-controls",
+    unitId: "ch1",
+    topicId: "ch1-controls",
+    order: 5,
+    title: "Controls: physical, logical, administrative",
+    summary: "To mitigate risk we implement controls, divided into three categories.",
+    blocks: [
+      {
+        heading: "Three categories of controls",
+        body: ["To mitigate risk, we implement measures called **controls**. They are divided into three main categories:"],
+        table: {
+          headers: ["Category", "What it protects / is based on", "Examples"],
+          rows: [
+            ["Physical", "The physical environment where systems sit and data is stored", "Locks, fences, security guards"],
+            ["Logical (technical)", "The systems, networks and environments that process, transmit and store data", "Firewalls, passwords, encryption"],
+            ["Administrative", "Rules, laws, policies, procedures and guidelines", "Security awareness training, hiring policies, incident response plans"],
+          ],
+        },
+        ar: "للتقليل من المخاطر نطبق ضوابط (Controls) من ثلاث فئات: ضوابط مادية (Physical) تحمي البيئة المادية مثل الأقفال والأسوار والحراس؛ ضوابط منطقية/تقنية (Logical/Technical) تحمي الأنظمة والشبكات مثل الجدران النارية وكلمات المرور والتشفير؛ ضوابط إدارية (Administrative) مبنية على القواعد والقوانين والسياسات والإجراءات مثل التدريب على التوعية الأمنية وسياسات التوظيف وخطط الاستجابة للحوادث.",
+        source: s("L1", 15),
+      },
+      {
+        heading: "Scenario: protecting a school",
+        body: ["Classify each control:"],
+        bullets: [
+          "**Administrative** — the school's rule book states that all visitors must sign in at the front desk and wear a guest badge.",
+          "**Logical / technical** — the school's Wi-Fi password stops random people on the street from logging into the network.",
+          "**Physical** — a locked front gate keeps strangers from walking onto the playground.",
+        ],
+        ar: "سيناريو المدرسة: قاعدة تسجيل الزوار وارتداء البطاقة = ضابط إداري؛ كلمة مرور الشبكة اللاسلكية = ضابط تقني؛ البوابة المقفلة = ضابط مادي.",
+        source: s("L1", 16),
+      },
+    ],
+    keyPoints: ["Physical = locks, fences, guards.", "Logical/technical = firewalls, passwords, encryption.", "Administrative = policies, training, hiring policies, IR plans."],
+    traps: ["A written rule or policy is administrative even if it is about physical access (e.g. a visitor sign-in rule)."],
+  },
+  {
+    id: "ch1-risk",
+    unitId: "ch1",
+    topicId: "ch1-risk",
+    order: 6,
+    title: "The risk management cycle",
+    summary: "Identify assets → identify threats → assess vulnerabilities → assess risks → mitigate risks, then repeat.",
+    blocks: [
+      {
+        heading: "Five steps, repeated",
+        body: ["Risk management is a **cycle** — after mitigating, you repeat it."],
+        table: {
+          headers: ["Step", "What you do"],
+          rows: [
+            ["1. Identify assets", "List what you own that has value (e.g., data, software, staff)."],
+            ["2. Identify threats", "Spot external dangers that could harm those assets (e.g., hackers, failures)."],
+            ["3. Assess vulnerabilities", "Find internal weaknesses or security gaps in your system."],
+            ["4. Assess risks", "Calculate the actual danger. A risk only exists if a threat matches a vulnerability."],
+            ["5. Mitigate risks", "Put safety rules or technical controls in place to block the danger, then repeat."],
+          ],
+        },
+        visual: "risk-cycle",
+        ar: "دورة إدارة المخاطر خمس خطوات تتكرر: 1) تحديد الأصول ذات القيمة، 2) تحديد التهديدات الخارجية، 3) تقييم الثغرات الداخلية، 4) تقييم المخاطر — والخطر لا يوجد إلا إذا التقى تهديد مع ثغرة، 5) معالجة/تخفيف المخاطر بوضع ضوابط ثم تكرار الدورة.",
+        source: s("L1", 17),
+      },
+    ],
+    keyPoints: ["Order: assets → threats → vulnerabilities → risks → mitigate.", "Threats are external dangers; vulnerabilities are internal weaknesses.", "A risk only exists if a threat matches a vulnerability."],
+  },
+  {
+    id: "ch1-ir",
+    unitId: "ch1",
+    topicId: "ch1-ir",
+    order: 7,
+    title: "Incident response",
+    summary: "When risk management fails, incident response reacts: preparation, detection & analysis, containment, eradication, recovery, post-incident activity.",
+    blocks: [
+      {
+        heading: "The six phases",
+        body: ["In the event that our risk management efforts fail, **incident response** exists to react to such events. At a high level it consists of:"],
+        table: {
+          headers: ["Phase", "Meaning (slide 18)"],
+          rows: [
+            ["Preparation", "Having the policies and procedures that govern incident response and handling in place; conducting training."],
+            ["Detection and analysis", "Where the action begins to happen in the incident response process."],
+            ["Containment", "Ensure the situation does not cause any more damage than it already has."],
+            ["Eradication", "Attempt to remove the effects of the issue from our environment."],
+            ["Recovery", "Recover to a better state than the one we were in prior to the incident."],
+            ["Post-incident activity", "Determine specifically what happened, why it happened, and what we can do to keep it from happening again."],
+          ],
+        },
+        visual: "ir-cycle",
+        ar: "الاستجابة للحوادث تأتي عندما تفشل جهود إدارة المخاطر، ومراحلها: الاستعداد (السياسات والإجراءات والتدريب)، الاكتشاف والتحليل، الاحتواء (منع المزيد من الضرر)، الاستئصال (إزالة آثار المشكلة)، التعافي (العودة إلى حالة أفضل)، ونشاط ما بعد الحادث (تحديد ماذا حدث ولماذا وكيف نمنع تكراره).",
+        source: s("L1", 18),
+      },
+      {
+        heading: "Scenario: the lost debit card",
+        body: ["Every phase in one everyday story — a favourite ordering/matching question:"],
+        table: {
+          headers: ["Phase", "Action"],
+          rows: [
+            ["1. Preparation", "Memorise your PIN and save the bank's phone number in your contacts."],
+            ["2. Detection & analysis", "You realise the card is missing and see a $5 charge you didn't make."],
+            ["3. Containment", "You tap “Freeze Card” in the banking app — nobody else can use it."],
+            ["4. Eradication", "You call the bank, report it stolen and cancel it — the old card is dead."],
+            ["5. Recovery", "The bank mails a new card with a new number; you activate it."],
+            ["6. Post-incident activity", "You realise your wallet has a loose pocket and buy a zippered wallet."],
+          ],
+        },
+        ar: "سيناريو فقدان بطاقة الصراف: الاستعداد = حفظ الرقم السري ورقم البنك؛ الاكتشاف = ملاحظة فقدان البطاقة وعملية شراء غريبة؛ الاحتواء = تجميد البطاقة؛ الاستئصال = إلغاء البطاقة نهائياً؛ التعافي = استلام بطاقة جديدة وتفعيلها؛ ما بعد الحادث = شراء محفظة بسحاب لمنع التكرار.",
+        source: s("L1", 19),
+      },
+    ],
+    keyPoints: ["P-D-C-E-R-P: Preparation, Detection & analysis, Containment, Eradication, Recovery, Post-incident activity.", "Containment = stop further damage (freeze). Eradication = remove the cause (cancel)."],
+    traps: ["Containment (freeze the card) comes BEFORE eradication (cancel the card)."],
+  },
+  {
+    id: "ch1-did",
+    unitId: "ch1",
+    topicId: "ch1-did",
+    order: 8,
+    title: "Defense in depth",
+    summary: "Multiple layers of security around the most valuable asset — data.",
+    blocks: [
+      {
+        heading: "Layers around the data",
+        body: ["**Defense in depth**: build multiple layers of security around your most valuable asset (**data**). If a hacker breaks through one layer, the next layer stops them."],
+        table: {
+          headers: ["Layer", "Defenses (slide 20)"],
+          rows: [
+            ["1. Network (external, perimeter, internal)", "VPNs, firewalls, IDS/IPS that filter traffic and block bad actors before they enter"],
+            ["2. Host", "Individual device security (laptops, servers): antivirus, authentication, password hashing"],
+            ["3. Application", "Software-level protection: validation and content filtering to prevent exploit code from executing"],
+            ["4. Data", "The final line of defense: encryption, access controls, backups"],
+          ],
+        },
+        visual: "did-rings",
+        ar: "استراتيجية الدفاع المتعدد الطبقات (Defense in Depth): نبني عدة طبقات أمنية حول أثمن أصل وهو البيانات، فإذا اخترق المهاجم طبقة أوقفته الطبقة التالية. الطبقات: الشبكة (VPN، جدران نارية، IDS/IPS)، المضيف/الجهاز (مضاد فيروسات، مصادقة، تجزئة كلمات المرور)، التطبيق (التحقق من المدخلات، تصفية المحتوى)، البيانات (التشفير، التحكم في الوصول، النسخ الاحتياطي).",
+        source: s("L1", 20),
+      },
+    ],
+    keyPoints: ["Data is at the centre.", "Network → Host → Application → Data.", "Data layer = encryption, access controls, backups."],
+  },
+  {
+    id: "ch1-laws",
+    unitId: "ch1",
+    topicId: "ch1-laws",
+    order: 9,
+    title: "Laws and regulations",
+    summary: "The final layer: organizations must protect confidential data to comply with laws and regulations.",
+    blocks: [
+      {
+        heading: "The final layer",
+        body: ["As an information security professional, it is critical to understand the role laws and regulations play. Organizations must protect confidential data to comply with them."],
+        table: {
+          headers: ["Item", "Meaning (slide 21)"],
+          rows: [
+            ["Laws", "The system of rules that a country or area must obey."],
+            ["Regulation", "Rules issued by governmental agencies that have the force of law."],
+            ["Oman Cyber Crime Law (Royal Decree No. 12/2011)", "Aims to combat cyber offenses like unauthorized access, data manipulation, and identity theft."],
+            ["Electronic Transactions Law (Royal Decree No. 69/2008)", "Establishes a legal framework for secure electronic transactions, ensuring authenticity and minimizing fraud."],
+          ],
+        },
+        ar: "الطبقة الأخيرة هي القوانين والأنظمة. القانون: منظومة القواعد التي يجب أن تلتزم بها دولة أو منطقة. اللائحة/النظام: قواعد تصدرها جهات حكومية ولها قوة القانون. من الأمثلة العُمانية: قانون مكافحة جرائم تقنية المعلومات (مرسوم سلطاني 12/2011) لمكافحة الوصول غير المصرح به والتلاعب بالبيانات وانتحال الهوية، وقانون المعاملات الإلكترونية (مرسوم سلطاني 69/2008) لتنظيم المعاملات الإلكترونية الآمنة وضمان الموثوقية وتقليل الاحتيال.",
+        source: s("L1", 21),
+      },
+    ],
+    keyPoints: ["Law = rules a country/area must obey.", "Regulation = rules from government agencies with the force of law.", "Cyber Crime Law RD 12/2011; Electronic Transactions Law RD 69/2008."],
+  },
+];
